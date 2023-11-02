@@ -9,15 +9,15 @@
 <body>
     <script>
 
-function test(){
-    return function(){
-        return function(){
-            return '!'
+function getSum(num1){
+    return function(num2){
+        return function(num3){
+            console.log( num1 + num2 + num3)
         }
     }
 }
 
-console.log(test()()())
+getSum(2)(3)(4)
 
     </script>
 </body>
