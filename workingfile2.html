@@ -14,12 +14,12 @@
 function getArrayDoubled(arr, callback) {
     let arr1 = [];
     for (let elem of arr) {
-        arr1.push(callback(elem));
+        arr1.push(callback(elem.slice(0,1).toUpperCase() + elem.slice(1)));
     }
     return arr1;
 }
 
-let arr1 = getArrayDoubled(['a', 'b', 'c'], function doubleValues(elem) {
+let arr1 = getArrayDoubled(['adsfk', 'bdsf', 'csdf'], function doubleValues(elem) {
     return elem 
 });
 
