@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+function getArrayDoubled(arr, callback) {
+    let arr1 = [];
+    for (let elem of arr) {
+        arr1.push(callback(elem));
+    }
+    return arr1;
+}
+
+let arr1 = getArrayDoubled(['a', 'b', 'c'], function doubleValues(elem) {
+    return elem 
+});
+
+let arr2 = arr1.reverse()
+
+console.log(arr2);
+//In this corrected code, we use the split('') method to split the string into an array of characters, the reverse() method to reverse the array, and the join('') method to join the characters back into a string. This will correctly reverse the string elements in the array.
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
