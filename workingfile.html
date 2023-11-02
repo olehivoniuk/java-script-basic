@@ -9,20 +9,15 @@
 <body>
     <script>
 
-function func1(){
+function test(){
     return function(){
-        return 1;
+        return function(){
+            return '!'
+        }
     }
 }
 
-function func2(){
-    return function (){
-        return 2 
-    }
-}
-
-
-console.log( func1()() + func2()())
+console.log(test()()())
 
     </script>
 </body>
