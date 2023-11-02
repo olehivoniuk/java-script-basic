@@ -9,20 +9,18 @@
 <body>
     <script>
 
-function getSum(num1){
-    return function(num2){
-        return function(num3){
-            return function(num4){
-                  let str = (String(num1) + String(num2) + String(num3) + String(num4))
-                   console.log(str.split('')) 
-            }
-            
-        }
+function getArrayDoubled ( arr, callback){
+    let arr1 = []; 
+    for ( let elem of arr){
+        arr1.push(callback(elem))
     }
+    return arr1; 
 }
 
-  getSum(2)(3)(4)(5); 
-  
+
+ let arr1 = getArrayDoubled([1,4,6,8,8,9,4,], function doubleValues(num){ return num * 2})
+
+ console.log(arr1)
 
     </script>
 </body>
