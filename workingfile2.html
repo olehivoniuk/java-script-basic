@@ -8,21 +8,25 @@
 </head>
 <body>
     <script>
+function test() {
+	let counter = 0;
+	
+	return function() {
+		return function() {
+			console.log(counter);
+			counter++;
+		};
+	};
+}
 
-  function getArrayCubed( arr, callback){
-      let arr1 = []; 
+let func = test();
 
-      for ( let elem of arr){
-          arr1.push(callback(elem))
-      }
-
-      return arr1;
-  }
-
- console.log( getArrayCubed([2,3,4,5], function cube(num) {
-	return num ** 3;
-  }))
-
+let func1 = func();
+let func2 = func();
+func1();
+func2();
+func1();
+func2();
 
     </script>
 </body>
