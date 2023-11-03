@@ -8,24 +8,21 @@
 </head>
 <body>
     <script>
+function sumObject(obj) {
+    let sum = 0;
 
-function func(arr) {
+    for (let key in obj) {
+        if (typeof obj[key] === 'object') {
+            sum += sumObject(obj[key]); // Recursively sum the nested object
+        } else if (typeof obj[key] === 'number') {
+            sum += obj[key]; // Add numeric values to the sum
+        }
+    }
 
-	for (let elem of arr) {
-
-
-		if (typeof elem == 'object') {
-			func(elem);
-		} else {
-			(arr2.push(elem));
-		}
-
-	}
+    return sum;
 }
-let arr2 = [];
-console.log(arr2); 
 
-func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
+console.log(sumObject({a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}))
 
 
 
