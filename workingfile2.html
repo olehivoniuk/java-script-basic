@@ -8,21 +8,13 @@
 </head>
 <body>
     <script>
-function sumObject(obj) {
-    let sum = 0;
 
-    for (let key in obj) {
-        if (typeof obj[key] === 'object') {
-            sum += sumObject(obj[key]); // Recursively sum the nested object
-        } else if (typeof obj[key] === 'number') {
-            sum += obj[key]; // Add numeric values to the sum
-        }
-    }
+let arr = [-2, 5, 1, -5, -1, 1, 3, 4, -1];
 
-    return sum;
-}
+let res = arr.filter(elem => elem > 0)
 
-console.log(sumObject({a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}))
+console.log(res);
+
 
 
 
