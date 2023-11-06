@@ -7,24 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <script >
+let arr = ['John', 'Smit', 'development', 'programmer', 
+	2000]; 
 
-function func (...nums){
-    let sum = 0; 
+let [name, surname, ...info] = arr;
 
-    for(let elem of nums){
-        sum += elem;
-    }
-
-    return sum/nums.length
-}
-
-
-
-console.log(func(1,2,4,6,7,8))
-
-
-
+console.log(surname)
 
 </script>
 </body>
