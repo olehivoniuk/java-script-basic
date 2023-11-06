@@ -8,12 +8,23 @@
 </head>
 <body>
     <script >
-let arr = ['John', 'Smit', 'development', 'programmer', 
-	2000]; 
 
-let [name, surname, ...info] = arr;
+let arr = [,,]
+function func() {
+	return (new Date).getDay();
+}
 
-console.log(surname)
+ let getDat =()=> (new Date).getDate(); 
+
+ let defineYear = () => (new Date).getFullYear(); 
+
+let [year = defineYear(), month = getDat(), day = func()] = arr;
+
+
+console.log(year)
+console.log(month); 
+console.log(day)
+
 
 </script>
 </body>
