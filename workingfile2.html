@@ -7,24 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <script >
+    <p id="elem"><button>text</button></p>
+    <p1 id="p1">1</p1>
+    <p2 id =p2>2</p2>
 
-let arr = [,,]
+       <script >
+
+let elem = document.querySelector('#elem');
+let p1 = document.querySelector('#p1');
+let p2 = document.querySelector('#p2');
+
+elem.addEventListener('click', func);
+
 function func() {
-	return (new Date).getDay();
+    const sum = parseInt(p1.textContent) + parseInt(p2.textContent);
+    return elem.textContent = "The sum of p1 and p2 is: " + sum;
 }
-
- let getDat =()=> (new Date).getDate(); 
-
- let defineYear = () => (new Date).getFullYear(); 
-
-let [year = defineYear(), month = getDat(), day = func()] = arr;
-
-
-console.log(year)
-console.log(month); 
-console.log(day)
-
 
 </script>
 </body>
