@@ -8,7 +8,10 @@
 </head>
 <body>
     
-   <input type="text">
+   <input id="a" type="text">
+   <input id="b" type="text">
+   <input id="c" type="text">
+
    <button id="btn">push</button>
    <p></p>
    
@@ -18,21 +21,37 @@
     
     <script>
 
-        let input = document.querySelector('input'); 
+        let inputA = document.querySelector('#a'); 
+        let inputB = document.querySelector('#b'); 
+        let inputC = document.querySelector('#c'); 
         let button = document.querySelector('#btn'); 
         let parag = document.querySelector('p');
          
         button.addEventListener('click',function(){
-            
 
-            input.value = factorial(Number(input.value))
-            function factorial(n) {
-            if (n === 0 || n === 1) {
-               return 1;
-             } else {
-            return n * factorial(n - 1);
-             }
-}
+
+       function quadraticFormula(a, b, c) {
+    // Calculate the discriminant
+    let D = b**2 - 4*a*c;
+
+    // Check the value of the discriminant
+    if (D >= 0) {
+        // Real roots
+        let x1 = (-b + Math.sqrt(D)) / (2*a);
+        let x2 = (-b - Math.sqrt(D)) / (2*a);
+        return [x1, x2];
+    } else {
+        // Complex roots
+        let realPart = -b / (2*a);
+        let imaginaryPart = Math.sqrt(Math.abs(D)) / (2*a);
+        return [`${realPart} + ${imaginaryPart}i`, `${realPart} - ${imaginaryPart}i`];
+    }
+} 
+   
+    let res = quadraticFormula(Number(inputA.value),Number(inputB.value), Number(inputC.value))
+            
+   console.log (res);
+           
           
         })
       
