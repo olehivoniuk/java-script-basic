@@ -8,52 +8,28 @@
 </head>
 <body>
     
-   <input id="a" type="text">
-   <input id="b" type="text">
-   <input id="c" type="text">
-
-   <button id="btn">push</button>
-   <p></p>
-   
-      
-      
-      
-    
+    <p>1</p>   
+    <p>3</p> 
+    <p>18</p> 
+    <p>4</p> 
+    <p>3</p> 
     <script>
-
-        let inputA = document.querySelector('#a'); 
-        let inputB = document.querySelector('#b'); 
-        let inputC = document.querySelector('#c'); 
-        let button = document.querySelector('#btn'); 
-        let parag = document.querySelector('p');
-         
-        button.addEventListener('click',function(){
+  let pargs = document.querySelectorAll('p'); 
 
 
-       function quadraticFormula(a, b, c) {
-    // Calculate the discriminant
-    let D = b**2 - 4*a*c;
+  for ( let elem = 0 ; elem < pargs.length; elem++){
+      pargs[elem].addEventListener('click', function(){
+       let alert =   pargs[elem].setAttribute('data-num', elem + 1); 
+       console.log(pargs[elem])
+      })
+  }
 
-    // Check the value of the discriminant
-    if (D >= 0) {
-        // Real roots
-        let x1 = (-b + Math.sqrt(D)) / (2*a);
-        let x2 = (-b - Math.sqrt(D)) / (2*a);
-        return [x1, x2];
-    } else {
-        // Complex roots
-        let realPart = -b / (2*a);
-        let imaginaryPart = Math.sqrt(Math.abs(D)) / (2*a);
-        return [`${realPart} + ${imaginaryPart}i`, `${realPart} - ${imaginaryPart}i`];
-    }
-} 
-   
-    let res = quadraticFormula(Number(inputA.value),Number(inputB.value), Number(inputC.value))
-            
-   console.log (res);
-           
-          
-        })
+       
+
+
+  
+  
+  
       
       
    
