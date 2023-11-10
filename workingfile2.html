@@ -5,26 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
-    <p>1</p>   
-    <p>3</p> 
-    <p>18</p> 
-    <p>4</p> 
-    <p>3</p> 
+    <p>text1</p>
+<button id="corrector">cross out</button>
+<button id="bold">make bold</button>
+<button id="red">make red </button>
+
     <script>
-  let pargs = document.querySelectorAll('p'); 
+ let elem = document.querySelector('p');
+ let correctorBtn =  document.querySelector('#corrector');
+ let boldBtn =  document.querySelector('#bold');
+ let redBtn =  document.querySelector('#red');
 
+correctorBtn.addEventListener('click', function(){
+    elem.style.textDecoration = 'line-through';
+})
+     
+boldBtn.addEventListener('click', function(){
+    elem.style.fontWeight ='bold'; 
+}); 
 
-  for ( let elem = 0 ; elem < pargs.length; elem++){
-      pargs[elem].addEventListener('click', function(){
-       let alert =   pargs[elem].setAttribute('data-num', elem + 1); 
-       console.log(pargs[elem])
-      })
-  }
-
-       
+redBtn.addEventListener('click', function(){
+    elem.style.color = 'red'
+})
 
 
   
