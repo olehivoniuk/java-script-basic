@@ -8,39 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <ul>
-        <li>text1</li>
-        <li>text2</li>
-        <li id="elem">text3</li>
-        <li>text4</li>
-        <li>text5</li>
-    </ul>
-
-    <script>
-
-let elem = document.querySelector('#elem'); 
-    let next = elem.nextElementSibling; 
-    let last = next.nextElementSibling; 
-
-    let previous = elem.previousElementSibling; 
-    let first = previous.previousElementSibling; 
-
-
-    elem.addEventListener('click',function(){
-        let tempText = last.textContent;
-        last.textContent = first.textContent;
-        first.textContent = tempText;
-    })
-    
-
-    
+    <input id="elem">
+    <p></p>
 
 
 
+<script>
+let elem = document.querySelector('#elem');
+let p = document.querySelector('p')
 
-  
-      
-      
+
+elem.addEventListener('input', function() {
+    let needed = this.value.length; 
+    let ch = 5 - needed;  // Initialize ch and calculate the remaining characters
+
+    if (ch >= 1) {
+        p.textContent = `You have ${ch} characters left.`;
+    } else {
+        p.textContent = 'You reached the limit.';
+    }
+});
+
    
     </script>
 </body>
