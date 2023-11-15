@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="button">click me</button>
+    <ol id="elem"></ol>
     
-    
+
 
     
 
@@ -17,17 +19,32 @@
 
 "use strict";
 
-let i = 0;
-let x = 1000;
+let ol = document.querySelector('#elem');
+let button = document.querySelector('#button') 
 
-function timer() {
-	setTimeout(function() {
-		console.log(++i);
-		
-		timer(); // вызовем сами себя
-	}, x * i);
-}
-timer();
+let li = document.createElement('li'); 
+li.textContent = 'item'; 
+
+let li1 = document.createElement('li'); 
+li1.textContent = 'item2'; 
+
+button.addEventListener('click',function(){
+    ol.appendChild(li);
+    ol.appendChild(li1);
+
+    
+    li.addEventListener('click',function(){
+        li.textContent += '!'; 
+    })
+     
+    li1.addEventListener('click',function(){
+        li1.textContent += '!'; 
+    })
+
+})
+
+
+
 
 
 
