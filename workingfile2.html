@@ -11,18 +11,24 @@
     
     
 
-    <p class="rrr">2</p>
+    
 
 <script>
 
 "use strict";
-let p = document.querySelector('p');  
 
-p.addEventListener('click', function() {
-        setInterval(function() {
-		p.classList.toggle ('ggg')
-	}, 1000);
-});
+let i = 0;
+let x = 1000;
+
+function timer() {
+	setTimeout(function() {
+		console.log(++i);
+		
+		timer(); // вызовем сами себя
+	}, x * i);
+}
+timer();
+
 
 
     </script>
