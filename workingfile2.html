@@ -9,13 +9,9 @@
 </head>
 <body>
     
-    <p>aaa</p>
-<p>bbb</p>
-<p>ccc</p>
-<p>ddd</p>
-<p>eee</p>
-
-<button>click me</button>
+    <p id="id1">text1</p>
+    <p id="id2">text2</p>
+    <p id="id3">text3</p>
 
 
 
@@ -25,20 +21,21 @@
 
 "use strict";
 
-let button = document.querySelector('button');
-let elems  = document.querySelectorAll('p');
 
-let set = new Set;
-for (let elem of elems) {
-	elem.addEventListener('click', function() {
-		set.add(this);
-	});
-}
-button.addEventListener('click', function() {
-	for (let elem of set) {
-		elem.textContent = elem.textContent + '!';
-	}
+let json = '["user1","user2","user3","user4","user5"]';
+
+
+let arr = JSON.parse(json);
+console.log(arr);
+
+let ul = document.createElement('ul'); 
+arr.forEach(element => {
+    let li = document.createElement('li'); 
+    li.textContent = element; 
+    ul.appendChild(li)
 });
+
+document.body.appendChild(ul)
 
     </script>
 </body>
