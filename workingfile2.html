@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="button">click me</button>
-    <ol id="elem"></ol>
     
+    <input type="text" class="number-input" onkeydown="handleKeyDown(event)" onblur="handleBlur()">
+    <input type="text" class="number-input" onkeydown="handleKeyDown(event)" onblur="handleBlur()">
+
 
 
     
@@ -19,32 +20,23 @@
 
 "use strict";
 
-let ol = document.querySelector('#elem');
-let button = document.querySelector('#button') 
+let enteredNumbers = []; 
 
-let li = document.createElement('li'); 
-li.textContent = 'item'; 
+function handleKeyDown(event){
+    if (event.key === "Enter"){
+        const enteredNumber = parseFloat(event.target.value); 
+        if (!isNaN(enteredNumber)){
+        enteredNumbers.push(enteredNumber); 
+        event.target.value = '';
+        
+        console.log (enteredNumbers)
+        }
+    }
+}
 
-let li1 = document.createElement('li'); 
-li1.textContent = 'item2'; 
-
-button.addEventListener('click',function(){
-    ol.appendChild(li);
-    ol.appendChild(li1);
-
-    
-    li.addEventListener('click',function(){
-        li.textContent += '!'; 
-    })
-     
-    li1.addEventListener('click',function(){
-        li1.textContent += '!'; 
-    })
-
-})
-
-
-
+function handleBlur (){
+    console.log(enteredNumbers)
+}
 
 
 
