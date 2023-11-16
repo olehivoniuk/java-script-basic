@@ -9,8 +9,13 @@
 </head>
 <body>
     
-    <input type="text" class="number-input" onkeydown="handleKeyDown(event)" onblur="handleBlur()">
-    <input type="text" class="number-input" onkeydown="handleKeyDown(event)" onblur="handleBlur()">
+    <p>aaa</p>
+<p>bbb</p>
+<p>ccc</p>
+<p>ddd</p>
+<p>eee</p>
+
+<button>click me</button>
 
 
 
@@ -20,25 +25,20 @@
 
 "use strict";
 
-let enteredNumbers = []; 
+let button = document.querySelector('button');
+let elems  = document.querySelectorAll('p');
 
-function handleKeyDown(event){
-    if (event.key === "Enter"){
-        const enteredNumber = parseFloat(event.target.value); 
-        if (!isNaN(enteredNumber)){
-        enteredNumbers.push(enteredNumber); 
-        event.target.value = '';
-        
-        console.log (enteredNumbers)
-        }
-    }
+let set = new Set;
+for (let elem of elems) {
+	elem.addEventListener('click', function() {
+		set.add(this);
+	});
 }
-
-function handleBlur (){
-    console.log(enteredNumbers)
-}
-
-
+button.addEventListener('click', function() {
+	for (let elem of set) {
+		elem.textContent = elem.textContent + '!';
+	}
+});
 
     </script>
 </body>
