@@ -9,28 +9,23 @@
 </head>
 <body>
 
-    <input type="text" id="myInput" value="">
-    
-    
+    <p id="counter">Страница обновлена: 0 раз</p>
+
     <script>
         "use strict";
-
-
-        let input = document.getElementById('myInput');
-
-// Check if there's a stored value in localStorage
-let storedText = localStorage.getItem('info');
-
-// Set the stored value as the input value
-if (storedText) {
-    input.value = storedText;
-}
-
-// Add an event listener to store the input text on blur
-input.addEventListener('blur', function() {
-    localStorage.setItem('info', input.value);
-});
- 
+    
+        // Получаем текущее значение счетчика из локального хранилища
+        let refreshCount = localStorage.getItem('refreshCount') || 0;
+    
+        // Обновляем значение на экране
+        document.getElementById('counter').textContent = `Страница обновлена: ${refreshCount} раз`;
+    
+        // Увеличиваем счетчик при каждом обновлении страницы
+        window.addEventListener('beforeunload', function() {
+            refreshCount++;
+            // Сохраняем новое значение счетчика в локальное хранилище
+            localStorage.setItem('refreshCount', refreshCount);
+        });
 
     </script>
 </body>
