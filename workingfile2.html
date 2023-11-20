@@ -8,56 +8,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table id="table"></table>
-
+    
     
     <script>
         "use strict";
+        let time = localStorage.getItem('time');
 
-let table = document.getElementById('table'); 
-
-let json = `[
-	{
-		"name": "user1",
-		"age": 25,
-		"salary": 1000
-	},
-	{
-		"name": "user2",
-		"age": 26,
-		"salary": 2000
-	},
-	{
-		"name": "user3",
-		"age": 27,
-		"salary": 3000
-	}
-]`;
-
-
-let obj = JSON.parse(json); 
-
-for( let employee of obj){
-    let tr = document.createElement('tr'); 
-
-    let td1 = document.createElement('td'); 
-    td1.textContent = employee.name; 
-    tr.appendChild(td1)
-
-    let td2 = document.createElement('td'); 
-    td2.textContent = employee.age; 
-    tr.appendChild(td2); 
-
-    let td3 = document.createElement('td'); 
-    td3.textContent = employee.salary; 
-    tr.appendChild(td3)
-
-
-    table.appendChild(tr)
-
+if (time === null) {
+	let now = Date.now();
+	localStorage.setItem('time', now);
 }
 
+let time2 = localStorage.getItem('time2');
 
+if (time2 === null) {
+	let now1 = Date.now();
+	  localStorage.setItem('time2', now1);
+}
+let earlier = parseInt(localStorage.getItem('time'));
+let later = parseInt(localStorage.getItem('time2'));
+
+if (!isNaN(earlier) && !isNaN(later)) {
+    let res = later - earlier;
+    console.log(res);
+} else {
+    console.log("Invalid time values");
+}
     </script>
 </body>
 </html>
