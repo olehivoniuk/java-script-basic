@@ -5,60 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <input type="text" id="one">
-    <input type="text" id="two">
-    <input type="text" id="three">
-    <button>push</button>
-
-    <script>
-        "use strict";
-        let button = document.querySelector('button'); 
-        let input1 = document.querySelector('#one'); 
-        let input2 = document.querySelector('#two');
-        let input3 = document.querySelector('#three');
-
-
-        let users = [
-	{
-		surn: 'surn1',
-		name: 'name1',
-		age: 31,
-	},
-	{
-		surn: 'surn2',
-		name: 'name2',
-		age: 32,
-	},
-	{
-		surn: 'surn',
-		name: 'name3',
-		age: 33,
-	},
-];
-
-localStorage.setItem('users', JSON.stringify(users)); 
-
-let json = localStorage.getItem('users'); 
-let arr = JSON.parse(json); 
-
-button.addEventListener('click',function(){
-
-    arr.push({
-    surn: input1.value,
-    name: input2.value,
-    age: input3.value
-});
-
-
-localStorage.setItem('users', JSON.stringify(arr))
-
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
     
-
-})
+        #checklist {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+    
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+    
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+    
+        input[type="text"] {
+          flex: 1;
+          margin-right: 10px;
+        }
+    
+        button {
+          cursor: pointer;
+        }
+    
+        .completed {
+          text-decoration: line-through;
+          color: #888;
+        }
+        #tasks{
+            display: block;
+        }
+      </style>
+    </head>
+    <body>
+    
+    <div id="checklist">
+      <h2>My Checklist</h2>
+      
+      <div>
+        <input type="text" id="newTask" placeholder="New task...">
+        <button onclick="addTask()">Add</button>
+        <button onclick="clearCompleted()">Clear Completed</button>
+      </div>
+    </div>
+    <ul id="tasks">
+        <!-- Tasks will be added dynamically here -->
+      </ul>
+    
+    <script>
+      const tasksContainer = document.getElementById('tasks');
+      const newTaskInput = document.getElementById('newTask');
+    
+      function addTask() {
+        const taskText = newTaskInput.value.trim();
+        if (taskText !== '') {
+          const taskItem = document.createElement('li');
+          taskItem.innerHTML = `
+            <input type="checkbox" onchange="toggleCompleted(this)">
+            <span>${taskText}</span>
+            <button onclick="removeTask(this)">Remove</button>
+          `;
+          tasksContainer.appendChild(taskItem);
+          newTaskInput.value = '';
+        }
+      }
+    
+      function toggleCompleted(checkbox) {
+        const taskText = checkbox.nextElementSibling;
+        taskText.classList.toggle('completed', checkbox.checked);
+      }
+    
+      function removeTask(button) {
+        const taskItem = button.parentElement;
+        tasksContainer.removeChild(taskItem);
+      }
+    
+      function clearCompleted() {
+        const completedTasks = document.querySelectorAll('.completed');
+        completedTasks.forEach(task => {
+          const taskItem = task.parentElement;
+          tasksContainer.removeChild(taskItem);
+        });
+      }
     </script>
-</body>
-</html>
+    
+    </body>
+    </html>
