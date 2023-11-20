@@ -9,24 +9,33 @@
 </head>
 <body>
 
-    <p id="counter">Страница обновлена: 0 раз</p>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <button>push</button>
 
     <script>
         "use strict";
-    
-        // Получаем текущее значение счетчика из локального хранилища
-        let refreshCount = localStorage.getItem('refreshCount') || 0;
-    
-        // Обновляем значение на экране
-        document.getElementById('counter').textContent = `Страница обновлена: ${refreshCount} раз`;
-    
-        // Увеличиваем счетчик при каждом обновлении страницы
-        window.addEventListener('beforeunload', function() {
-            refreshCount++;
-            // Сохраняем новое значение счетчика в локальное хранилище
-            localStorage.setItem('refreshCount', refreshCount);
-        });
 
+        let inputs = document.querySelectorAll('input');
+        let button = document.querySelector('button')
+
+
+button.addEventListener('click',function(){
+
+    let storedArr = localStorage.getItem('arr'); 
+
+    let res = JSON.parse(storedArr); 
+    console.log(res);
+
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = res[i] || ''; // Use '' if the array doesn't have enough elements
+    }
+
+
+})
+
+       
     </script>
 </body>
 </html>
