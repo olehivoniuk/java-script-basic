@@ -9,33 +9,56 @@
 </head>
 <body>
 
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <input type="text" id="three">
     <button>push</button>
 
     <script>
         "use strict";
+        let button = document.querySelector('button'); 
+        let input1 = document.querySelector('#one'); 
+        let input2 = document.querySelector('#two');
+        let input3 = document.querySelector('#three');
 
-        let inputs = document.querySelectorAll('input');
-        let button = document.querySelector('button')
 
+        let users = [
+	{
+		surn: 'surn1',
+		name: 'name1',
+		age: 31,
+	},
+	{
+		surn: 'surn2',
+		name: 'name2',
+		age: 32,
+	},
+	{
+		surn: 'surn',
+		name: 'name3',
+		age: 33,
+	},
+];
+
+localStorage.setItem('users', JSON.stringify(users)); 
+
+let json = localStorage.getItem('users'); 
+let arr = JSON.parse(json); 
 
 button.addEventListener('click',function(){
 
-    let storedArr = localStorage.getItem('arr'); 
+    arr.push({
+    surn: input1.value,
+    name: input2.value,
+    age: input3.value
+});
 
-    let res = JSON.parse(storedArr); 
-    console.log(res);
 
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].value = res[i] || ''; // Use '' if the array doesn't have enough elements
-    }
+localStorage.setItem('users', JSON.stringify(arr))
 
+    
 
 })
-
-       
     </script>
 </body>
 </html>
