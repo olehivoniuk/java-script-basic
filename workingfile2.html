@@ -8,32 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <input type="text" id="myInput" value="">
     
     
     <script>
         "use strict";
-        let time = localStorage.getItem('time');
 
-if (time === null) {
-	let now = Date.now();
-	localStorage.setItem('time', now);
+
+        let input = document.getElementById('myInput');
+
+// Check if there's a stored value in localStorage
+let storedText = localStorage.getItem('info');
+
+// Set the stored value as the input value
+if (storedText) {
+    input.value = storedText;
 }
 
-let time2 = localStorage.getItem('time2');
+// Add an event listener to store the input text on blur
+input.addEventListener('blur', function() {
+    localStorage.setItem('info', input.value);
+});
+ 
 
-if (time2 === null) {
-	let now1 = Date.now();
-	  localStorage.setItem('time2', now1);
-}
-let earlier = parseInt(localStorage.getItem('time'));
-let later = parseInt(localStorage.getItem('time2'));
-
-if (!isNaN(earlier) && !isNaN(later)) {
-    let res = later - earlier;
-    console.log(res);
-} else {
-    console.log("Invalid time values");
-}
     </script>
 </body>
 </html>
