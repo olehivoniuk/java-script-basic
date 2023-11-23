@@ -16,10 +16,9 @@
     <script>
 
 
-let str = 'sss site.ru zzz site.com kkk';
+let str = 'aaa aaa bbb bbb ccc ddd';
 
-
-let res = str.replace(/\b(\w+\.\w+)\b/g, '<a href="http://$1">$1</a>');
+let res = str.replace(/\b(\w+)\s+\1\b/g, '!' )
 console.log(res)
     </script>
     
