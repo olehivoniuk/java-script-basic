@@ -16,11 +16,13 @@
     <script>
 
 
-let str = '31.12.2025';
+let str = 'aaa [2] bbb [3] ccc [12] ddd';
 
-let res = str.replace(/(\d+)\.(\d+)\.(\d+)/, '$3.$2.$1')
-    console.log(res);
 
+let res = str.replace(/\d+/g, function(match){
+     return Number(match) * 2;
+})
+console.log(res);
     </script>
     
     </body>
