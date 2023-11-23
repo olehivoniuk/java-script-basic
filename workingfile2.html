@@ -16,9 +16,10 @@
     <script>
 
 
-let str = '12:37 15:48 17:59';
+let str = 'site.ru sss site.com zzz site.net';
 
-let matches= str.matchAll(/(\d+)\:(\d+)/g); 
+
+let matches= str.matchAll(/(\b\w+)\.(\w+\b)/g); 
 
 
 for ( let match of matches){
