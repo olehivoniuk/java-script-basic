@@ -16,11 +16,12 @@
     <script>
 
 
-let str = 'aaa [2] bbb [3] ccc [12] ddd';
-
+let str = '123 456 789';
 
 let res = str.replace(/\d+/g, function(match){
-     return Number(match) * 2;
+       
+
+    return match.split('').reverse().join('')
 })
 console.log(res);
     </script>
