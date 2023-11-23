@@ -16,12 +16,12 @@
     <script>
 
 
-let str = '123 456 789';
+let str = '31.12.2025 30.11.2024 29.10.2023';
 
-let res = str.replace(/\d+/g, function(match){
-       
+let res = str.replace(/(\d+)\.(\d+)\.(\d+)/g, function(match){
+    
 
-    return match.split('').reverse().join('')
+    return match.split('.').reverse().join('-')
 })
 console.log(res);
     </script>
