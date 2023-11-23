@@ -16,14 +16,13 @@
     <script>
 
 
-let str = 'site.ru sss site.com zzz site.net';
+let str = '12:37:57 15:48:58 17:59:59';
 
+let reg = /(\d+):(\d+):(\d+)/g;
 
-let matches= str.matchAll(/(\b\w+)\.(\w+\b)/g); 
-
-
-for ( let match of matches){
-    console.log(match);
+let res;
+while (res = reg.exec(str)) {
+	console.log(res); // [12, 1, 2], [34, 3, 4], [56, 5, 6]  
 }
     
 
