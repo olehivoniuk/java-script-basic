@@ -16,13 +16,14 @@
     <script>
 
 
-let str = 'a1b c34d x567z';
+let str = '12:37 15:48 17:59';
 
-let res = str.match(/\d+/g); 
+let matches= str.matchAll(/(\d+)\:(\d+)/g); 
 
-let sum = res ? res.reduce((acc, elem) => acc + parseInt(elem, 10), 0):0;
 
-console.log(sum);
+for ( let match of matches){
+    console.log(match);
+}
     
 
     </script>
