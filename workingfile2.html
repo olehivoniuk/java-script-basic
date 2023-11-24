@@ -14,23 +14,16 @@
         
     
     <script>
-try{
-    let jsonData = '{1,2,3,4,5]';
-  let data = JSON.parse(jsonData);
-  if (Array.isArray(data)) {
-    let ul = document.createElement('ul');
 
-    data.forEach(item => {
-      let li = document.createElement('li');
-      li.textContent = item;
-      ul.appendChild(li);
-    });
-    document.body.appendChild(ul);
-  }
-} catch{
-    alert("incorrect query");
+function getArr(json) {
+	return JSON.parse(json);
 }
-
+try {
+	let arr = getArr('[1,2,3,4,5]');
+console.log(arr);
+} catch (error) {
+	alert('закончилось место в локальном хранилище!');
+}
 
 
     </script>
