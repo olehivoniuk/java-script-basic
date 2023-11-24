@@ -14,14 +14,13 @@
         
     
     <script>
-let arr = ['ru', 'by', 'ua'];
-let variable = `(${arr.join('|')})$`; // Creates the pattern (ru|by|ua)$
-let reg = new RegExp(`^[a-z]+\\.${variable}`);
-let str = 'example.bs'; // Replace with your sample string
-let res = reg.test(str);
 
+
+let str = '123 456 789';
+
+let reg = new RegExp('[0-9]+', 'g')
+let res = str.replace(reg, '!');
 console.log(res);
-
     </script>
     
     </body>
