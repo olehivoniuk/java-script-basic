@@ -15,9 +15,9 @@
     
     <script>
 
-let str = '<a href="" class="eee" id="zzz">';
-    
-    let regex = /(\w+)(?==)/g;
+let str = '$aaa $bbb $ccc xxxx';
+
+    let regex = /(?<=\$)(\w+)/g;
 let functionNames = str.match(regex);
 
 console.log(functionNames);
