@@ -15,22 +15,12 @@
     
     <script>
 
+let str = '<a href="" class="eee" id="zzz">';
+    
+    let regex = /(\w+)(?==)/g;
+let functionNames = str.match(regex);
 
-let str = '12:59:59 12:59:12 09:45:09';
-
-let regex = /(\d+):(\d+):(\d+)/g;
-let matches = [...str.matchAll(regex)];
-
-console.log(matches)
-
-for (let match of matches) {
-    let firstGroup = match[1];
-    let thirdGroup = match[3];
-
-    if (firstGroup === thirdGroup) {
-        console.log(match);
-    }
-}
+console.log(functionNames);
     </script>
     
     </body>
