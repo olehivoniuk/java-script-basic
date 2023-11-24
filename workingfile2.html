@@ -14,13 +14,14 @@
         
     
     <script>
+let arr = ['ru', 'by', 'ua'];
+let variable = `(${arr.join('|')})$`; // Creates the pattern (ru|by|ua)$
+let reg = new RegExp(`^[a-z]+\\.${variable}`);
+let str = 'example.bs'; // Replace with your sample string
+let res = reg.test(str);
 
-let str = '$aaa $bbb $ccc xxxx';
+console.log(res);
 
-    let regex = /(?<=\$)(\w+)/g;
-let functionNames = str.match(regex);
-
-console.log(functionNames);
     </script>
     
     </body>
