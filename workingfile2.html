@@ -16,10 +16,21 @@
     <script>
 
 
-let str = '12:59:59';
-let reg = /(?<hours>\d+):(?<minutes>\d+):(?<seconds>\d+)/; 
-    let res = str.match(reg);
-console.log(res.groups)
+let str = '12:59:59 12:59:12 09:45:09';
+
+let regex = /(\d+):(\d+):(\d+)/g;
+let matches = [...str.matchAll(regex)];
+
+console.log(matches)
+
+for (let match of matches) {
+    let firstGroup = match[1];
+    let thirdGroup = match[3];
+
+    if (firstGroup === thirdGroup) {
+        console.log(match);
+    }
+}
     </script>
     
     </body>
