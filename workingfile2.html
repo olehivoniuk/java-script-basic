@@ -15,20 +15,22 @@
     
     <script>
 
-function getRoot(Num){
-    if(Num >= 0){
-    return Math.sqrt(Num)
+
+function sayHi(name){
+    if (  typeof(name)== 'string' ){
+    alert(`Hello ${name}, what are you doing here ? `)
     } else{
-        throw new Error('error of division by 0')
+        throw new TypeError ('type in your name, not a number'); 
     }
 }
 
-try{
-    alert(getRoot(-1))
-} catch {
-    alert( 'you are trying to get the square root from number that is less than 0, reconsider it!')
-}
+try {
+    sayHi(2)
 
+} catch(error){
+    alert ("you have made a typo mistake "); 
+   
+}
     </script>
     
     </body>
