@@ -15,28 +15,23 @@
     
     <script>
 
-function sayHi(name, age) {
-    let originalFirstLetter = name.slice(0, 1);
-    let upperCaseFirstLetter = originalFirstLetter.toUpperCase();
-
-    if (originalFirstLetter === upperCaseFirstLetter) {
-        alert(`Hello ${name}, ${age}! What are you doing here?`);
-    } else {
-        throw new SyntaxError('Type in your name with a capital letter');
-    }
-
-    if (age == 27){
-        return age;
-    } else{
-        throw new RangeError('wrong age')
-    }
+function div(a) {
+	if (a >= 0) {
+		return   Math.sqrt(a) 
+	} else {
+		throw  {name: 'squareRootingNegativeNumber ', message: ' you are trying to get square root from negative number'}
+	}
 }
 
-try {
-    sayHi('Oscar', 27);
-} catch (error) {
-    alert(error.name);
+try{
+ console.log(div(-4))
+
+} catch (error){
+  alert(error.message); 
+  console.log(error.message)
 }
+
+
 
     </script>
     
