@@ -15,29 +15,19 @@
     
     <script>
 
-try {
-    function saveData(json) {
-        let arr = JSON.parse(json);
-        for ( let i = 1 ; i <= arr.length; i++){
-            arr[i] = Number(arr[i]) ** 12**303;
-            localStorage.setItem(i, arr[i])
-
-        }
-
-    }
-
-    saveData(`[1,2,3,4,5]`);
-} catch (error) {
-    if (error.name == 'QuotaExceededError') {
-        alert('закончилось место в хранилище');
-    }
-
-    if (error.name == 'SyntaxError') {
-        alert('некорректный JSON');
+function getRoot(Num){
+    if(Num >= 0){
+    return Math.sqrt(Num)
+    } else{
+        throw new Error('error of division by 0')
     }
 }
 
-
+try{
+    alert(getRoot(-1))
+} catch {
+    alert( 'you are trying to get the square root from number that is less than 0, reconsider it!')
+}
 
     </script>
     
