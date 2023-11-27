@@ -15,22 +15,29 @@
     
     <script>
 
+function sayHi(name, age) {
+    let originalFirstLetter = name.slice(0, 1);
+    let upperCaseFirstLetter = originalFirstLetter.toUpperCase();
 
-function sayHi(name){
-    if (  typeof(name)== 'string' ){
-    alert(`Hello ${name}, what are you doing here ? `)
+    if (originalFirstLetter === upperCaseFirstLetter) {
+        alert(`Hello ${name}, ${age}! What are you doing here?`);
+    } else {
+        throw new SyntaxError('Type in your name with a capital letter');
+    }
+
+    if (age == 27){
+        return age;
     } else{
-        throw new TypeError ('type in your name, not a number'); 
+        throw new RangeError('wrong age')
     }
 }
 
 try {
-    sayHi(2)
-
-} catch(error){
-    alert ("you have made a typo mistake "); 
-   
+    sayHi('Oscar', 27);
+} catch (error) {
+    alert(error.name);
 }
+
     </script>
     
     </body>
