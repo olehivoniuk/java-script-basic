@@ -11,26 +11,43 @@
       </style>
     </head>
     <body>
-        
+        <div id="product" data-product="яблоко" data-price="10" >
+        </div> 
     
     <script>
 
-function div(a) {
-	if (a >= 0) {
-		return   Math.sqrt(a) 
-	} else {
-		throw  {name: 'squareRootingNegativeNumber ', message: ' you are trying to get square root from negative number'}
+function getCost(elem) {
+	if (elem.dataset.price !== undefined && elem.dataset.amount !== undefined) { 
+		return elem.dataset.price * elem.dataset.amount;
+	}
+    
+     if (elem.dataset.price == undefined) {
+		throw {
+			name: 'ProductCostError',
+			message: 'price is missing'
+		};
+	}  if (elem.dataset.amount == undefined) {
+		throw {
+			name: 'MissingAmountError',
+			message: 'Missing amount of the product, reach out to the shipper'
+		};
 	}
 }
 
-try{
- console.log(div(-4))
+let product = document.querySelector('#product');
 
-} catch (error){
-  alert(error.message); 
-  console.log(error.message)
+try {
+	let cost = getCost(product);
+	alert(cost);
+} catch (error) {
+    if (error.name === 'MissingAmountError') {
+        console.log('Error: ' + error.message);
+    } 
+    if (error.name === 'ProductCostError') {
+        console.log('Error: ' + error.message);
+    } 
+    
 }
-
 
 
     </script>
