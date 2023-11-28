@@ -11,39 +11,20 @@
       </style>
     </head>
     <body>
-        <button>show the picture </button>
       
     
     <script>
 
-        try{
-            let button = document.querySelector('button')
-
-button.addEventListener('click', function(){
- let image = document.createElement('img');
-
-
- 
- image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU'
-image.addEventListener('load', function() {
-document.body.appendChild(image);
-});
-
-
- 
-image.addEventListener('error', function() {
-throw {
- name: "ImageLoadingError", 
- messsage: "Reload the picture"
+function make(callback) {
+	setTimeout(function() {
+		let res = [1, 2, 3, 4, 5];
+		callback(res); // передаем результат параметром
+	}, 1000);
 }
-console.log(error.name);
+make(function(res) {
+	let result = res.reduce((sum,elem)=> sum + elem, 0 ); 
+    console.log(result);
 });
- 
-})
-}catch (error){
-    alert(error.name + " " + error.message)
-
-}
       
    
        
