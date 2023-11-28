@@ -16,31 +16,21 @@
     
     <script>
 
-let promise = new Promise (function(resolve, reject){
-   setTimeout(function(){
-
-       let isError = false; 
-
-       if (!isError) {
-            let randomNumber = Math.floor(Math.random() * 6);
-
-            if (randomNumber === 0) {
-                reject('Error in promise');
-            } else {
-                let result = 1 / randomNumber;
-                resolve(result);
-            }
-        } else {
-            reject('Error in promise');
-        }
-    }, 1000);
+let promise = new Promise(function(resolve, reject) {
+	setTimeout(function() {
+		let isError = true; // поставьте либо true, 	либо false 
+		
+		if (!isError) {
+			resolve([1, 2, 3, 4, 5]);
+		} else {
+			reject('error in promise');
+		}
+	}, 3000);
 });
 
-promise.then(function(result ){
-  console.log(result)
-}, function(error){
-    console.log(error)
-})
+setInterval(function() {
+	console.log(promise); // каждую секунду выводим промис в консоль 
+}, 1000);
 
     </script>
     
