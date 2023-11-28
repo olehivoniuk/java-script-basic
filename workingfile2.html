@@ -15,17 +15,16 @@
     
     <script>
 
-function make(callback) {
+function make(num1, num2, callback) {
 	setTimeout(function() {
-		let res = [1, 2, 3, 4, 5];
-		callback(res); // передаем результат параметром
-	}, 1000);
+		let arr = [1, 2, 3, 4, 5];
+		callback(arr[num1] + arr[num2]); // результатом передаем элемент массива 
+	}, 3000);
 }
-make(function(res) {
-	let result = res.reduce((sum,elem)=> sum + elem, 0 ); 
-    console.log(result);
+
+make(3,2,  function(res) {
+	console.log(res); // третий элемент массива
 });
-      
    
        
 
