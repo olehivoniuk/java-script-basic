@@ -21,15 +21,20 @@ let promise = new Promise (function(resolve, reject){
 
        let isError = false; 
 
-       if (!isError){
-       let randomNumber = Math.floor(Math.random()* 6);
-       let result = 1/randomNumber; 
-       resolve(result );
-   } else {
-       reject('Error in promise')
-   }
-   }, 1000)
-})
+       if (!isError) {
+            let randomNumber = Math.floor(Math.random() * 6);
+
+            if (randomNumber === 0) {
+                reject('Error in promise');
+            } else {
+                let result = 1 / randomNumber;
+                resolve(result);
+            }
+        } else {
+            reject('Error in promise');
+        }
+    }, 1000);
+});
 
 promise.then(function(result ){
   console.log(result)
