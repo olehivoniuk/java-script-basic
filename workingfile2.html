@@ -16,15 +16,25 @@
     
     <script>
 
-let promise = new Promise (function(resolve){
+let promise = new Promise (function(resolve, reject){
    setTimeout(function(){
-       let greeting = "Hello user! Welcome to the promises!"
-       resolve(greeting);
-   }, 5000)
+
+       let isError = false; 
+
+       if (!isError){
+       let randomNumber = Math.floor(Math.random()* 6);
+       let result = 1/randomNumber; 
+       resolve(result );
+   } else {
+       reject('Error in promise')
+   }
+   }, 1000)
 })
 
-promise.then(function(greeting){
-  console.log(greeting)
+promise.then(function(result ){
+  console.log(result)
+}, function(error){
+    console.log(error)
 })
 
     </script>
