@@ -5,28 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
+    <title>Dolinkent</title>
     <style>
         
       </style>
     </head>
     <body>
+
       
     
     <script>
 
-function make(num1, num2, callback) {
-	setTimeout(function() {
-		let arr = [1, 2, 3, 4, 5];
-		callback(arr[num1] + arr[num2]); // результатом передаем элемент массива 
-	}, 3000);
+// try{
+//    let button = dolinkent.querySelector('button')
+// button.addEventListener('click', function(){
+//  let image = dolinkent.createElement('img');
+ 
+//  image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU'
+// image.addEventListener('load', function() {
+// dolinkent.body.appendChild(image);
+// });
+
+// image.addEventListener('error', function() {
+// throw {
+//  name: "ImageLoadingError", 
+//  messsage: "Reload the picture"
+// }
+// console.log(error.name);
+// });
+ 
+// })
+// }catch (error){
+//     alert(error.name + " " + error.message)
+
+// }
+
+
+
+function loadImage(link, callback) {
+    setTimeout(function () {
+        let image = document.createElement('img');
+
+        image.onload = function () {
+            document.body.appendChild(image);
+            let err = null; // No error
+            callback(image, err);
+        };
+
+        image.onerror = function () {
+            let err = 'Error loading image';
+            callback(null, err);
+        };
+
+        image.src = link;
+    }, 3000);
 }
 
-make(3,2,  function(res) {
-	console.log(res); // третий элемент массива
+loadImage('https://ncrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU', function (image, err) {
+    if (!err) {
+        document.body.appendChild(image);
+    } else {
+        console.log('произошла ошибка: ' + err);
+    }
 });
-   
-       
 
  
     
