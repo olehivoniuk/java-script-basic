@@ -42,32 +42,100 @@
 
 
 
+// function loadImage(link, callback) {
+//     setTimeout(function () {
+//         let image = document.createElement('img');
+
+//         image.onload = function () {
+//             document.body.appendChild(image);
+//             let err = null; // No error
+//             callback(image, err);
+//         };
+
+//         image.onerror = function () {
+//             let err = 'Error loading image';
+//             callback(null, err);
+//         };
+
+//         image.src = link;
+//     }, 3000);
+// }
+
+// loadImage('https://ncrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU', function (image, err) {
+//     if (!err) {
+//         document.body.appendChild(image);
+//     } else {
+//         console.log('произошла ошибка: ' + err);
+//     }
+// });
+
 function loadImage(link, callback) {
     setTimeout(function () {
         let image = document.createElement('img');
 
         image.onload = function () {
-            document.body.appendChild(image);
-            let err = null; // No error
-            callback(image, err);
+            document.body.appendChild(image1);
+            let err1 = null; // No error
+            callback(image1, err1);
         };
 
         image.onerror = function () {
-            let err = 'Error loading image';
-            callback(null, err);
+            let err1 = 'Error loading image';
+            callback(null, err1);
         };
 
         image.src = link;
     }, 3000);
 }
 
-loadImage('https://ncrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU', function (image, err) {
-    if (!err) {
-        document.body.appendChild(image);
+
+loadImage('https://ncrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU', function(image1, err1) {
+
+    if (!err1){
+        document.body.append(image1);
     } else {
-        console.log('произошла ошибка: ' + err);
+        console.log('произошла ошибка: ' + err1);
     }
+	
+	loadImage('img2.png', function(image2, err2) {
+		document.body.append(image2);
+		
+		loadImage('img3.png', function(image3, err3) {
+			document.body.append(image3);
+			console.log(image3);
+
+            loadImage('img4.png', function(image4, err4) {
+			document.body.append(image4);
+			console.log('все картинки загружены');
+                 loadImage('img5.png', function(image5, err5) {
+			     document.body.append(image5);
+			     console.log(image5);
+                   loadImage('img6.png', function(image6, err6) {
+			       document.body.append(image6);
+			       console.log(image6);
+                     loadImage('img7.png', function(image7, err7) {
+			         document.body.append(image7);
+			         console.log(image7);
+                       loadImage('img8.png', function(image8, err8) {
+			           document.body.append(image3);
+			           console.log(image8);
+                         loadImage('img9.png', function(image9, err9) {
+			             document.body.append(image9);
+			             console.log('все картинки загружены');
+                            loadImage('img10.png', function(image10, err10) {
+			                document.body.append(image10);
+			                console.log('все картинки загружены');
+		                });
+		             });
+		           });
+		         });
+		       });      
+		     });
+		  });
+		});
+	});
 });
+
 
  
     
