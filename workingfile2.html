@@ -11,43 +11,47 @@
       </style>
     </head>
     <body>
-        <div id="product" data-product="яблоко" data-price="10" >
-        </div> 
+        <button>show the picture </button>
+      
     
     <script>
 
-function getCost(elem) {
-	if (elem.dataset.price !== undefined && elem.dataset.amount !== undefined) { 
-		return elem.dataset.price * elem.dataset.amount;
-	}
-    
-     if (elem.dataset.price == undefined) {
-		throw {
-			name: 'ProductCostError',
-			message: 'price is missing'
-		};
-	}  if (elem.dataset.amount == undefined) {
-		throw {
-			name: 'MissingAmountError',
-			message: 'Missing amount of the product, reach out to the shipper'
-		};
-	}
-}
+        try{
+            let button = document.querySelector('button')
 
-let product = document.querySelector('#product');
+button.addEventListener('click', function(){
+ let image = document.createElement('img');
 
-try {
-	let cost = getCost(product);
-	alert(cost);
-} catch (error) {
-    if (error.name === 'MissingAmountError') {
-        console.log('Error: ' + error.message);
-    } 
-    if (error.name === 'ProductCostError') {
-        console.log('Error: ' + error.message);
-    } 
-    
+
+ 
+ image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoqdW-vy-TLx78qhBclz0EEDQd3khOHGt8t_roG6L2kb9OEuBoSjn-RCzgLpmhnQcw8I&usqp=CAU'
+image.addEventListener('load', function() {
+document.body.appendChild(image);
+});
+
+
+ 
+image.addEventListener('error', function() {
+throw {
+ name: "ImageLoadingError", 
+ messsage: "Reload the picture"
 }
+console.log(error.name);
+});
+ 
+})
+}catch (error){
+    alert(error.name + " " + error.message)
+
+}
+      
+   
+       
+
+ 
+    
+
+
 
 
     </script>
