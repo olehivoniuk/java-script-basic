@@ -16,21 +16,31 @@
     
     <script>
 
-let promise = new Promise(function(resolve, reject) {
-	setTimeout(function() {
-		let isError = true; // поставьте либо true, 	либо false 
-		
-		if (!isError) {
-			resolve([1, 2, 3, 4, 5]);
-		} else {
-			reject('error in promise');
-		}
-	}, 3000);
-});
 
-setInterval(function() {
-	console.log(promise); // каждую секунду выводим промис в консоль 
-}, 1000);
+function getPromises() {
+    let promises = [];
+    
+    for (let i = 0; i < 10; i++) {
+        let timeRandom = Math.floor(Math.random() * 11).toString();
+        let convertedTimeRandom = Number(timeRandom + '000');
+        let randomI = Math.floor(Math.random() * i)
+
+        let onePromise = new Promise(resolve => setTimeout(() => resolve(randomI), convertedTimeRandom));
+        promises.push(onePromise);
+    }
+    
+    return promises ;
+}
+const promisesArray = getPromises();
+
+
+Promise.all(promisesArray)
+    .then(results => {
+        console.log("Results:", results );
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 
     </script>
     
