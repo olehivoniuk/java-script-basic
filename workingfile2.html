@@ -15,32 +15,39 @@
       
     
     <script>
-// function, create elements, add path of the image, add listeners (resolve and reject cases )
-// call the function, with 1 parameters : address of the image, then and parameters in this anonymous function 
-// then catch with log and message text error/ 
 
-function loadImage ( path ){
-    return new Promise ( function (resolve, reject){
 
-   
-    let image = document.createElement('img'); 
-    image.src = path; 
+function loadImage(path) {
+    return new Promise(function(resolve, reject) {
+        let image = document.createElement('img');
+        image.src = path;
 
-    image.addEventListener('load', function( ){
-        resolve(image); 
-    })
+        image.addEventListener('load', function() {
+            resolve(image);
+        });
 
-    image.addEventListener('error', function(){
-       reject(new Error('image' + path + 'is incorrect or load error'))
+        image.addEventListener('error', function() {
+            reject(new Error('Image ' + path + ' has incorrect or load error'));
+        });
     });
-	});
 }
 
-loadImage('/image/dictionary.img').then(function(image){
-    document.body.appendChild(image)
-}).catch(function(error){
-    console.log(error.name)
-})
+const imagePaths = [
+    '/image/dictionary.img',
+    'https://upload.wikimedia.org/wikipedia/commons/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Shunsuke1_20080622.jpg/440px-Shunsuke1_20080622.jpg'
+];
+
+const imagePromises = imagePaths.map(path => loadImage(path));
+
+Promise.all(imagePromises)
+    .then(images => {
+        images.forEach(image => document.body.appendChild(image));
+    })
+    .catch(error => {
+        console.log(error.name);
+    });
+
     </script>
     
     </body>
