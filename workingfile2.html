@@ -27,17 +27,21 @@ function getPromises() {
 
         let onePromise = new Promise(resolve => setTimeout(() => resolve(randomI), convertedTimeRandom));
         promises.push(onePromise);
+
     }
-    console.log(promises)
+
     
     return promises ;
 }
+
+
+
 const promisesArray = getPromises();
 
 
-Promise.race(promisesArray)
+Promise.all(promisesArray)
     .then(results => {
-        console.log("Results:", results );
+        console.log("Results:", results.reduce((sum, elem)=> sum + elem,0) );
     })
     .catch(error => {
         console.error("Error:", error);
