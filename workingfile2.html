@@ -28,13 +28,14 @@ function getPromises() {
         let onePromise = new Promise(resolve => setTimeout(() => resolve(randomI), convertedTimeRandom));
         promises.push(onePromise);
     }
+    console.log(promises)
     
     return promises ;
 }
 const promisesArray = getPromises();
 
 
-Promise.all(promisesArray)
+Promise.race(promisesArray)
     .then(results => {
         console.log("Results:", results );
     })
