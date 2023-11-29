@@ -15,38 +15,32 @@
       
     
     <script>
+// function, create elements, add path of the image, add listeners (resolve and reject cases )
+// call the function, with 1 parameters : address of the image, then and parameters in this anonymous function 
+// then catch with log and message text error/ 
 
+function loadImage ( path ){
+    return new Promise ( function (resolve, reject){
 
-function getPromises() {
-    let promises = [];
-    
-    for (let i = 0; i < 10; i++) {
-        let timeRandom = Math.floor(Math.random() * 11).toString();
-        let convertedTimeRandom = Number(timeRandom + '000');
-        let randomI = Math.floor(Math.random() * i)
+   
+    let image = document.createElement('img'); 
+    image.src = path; 
 
-        let onePromise = new Promise(resolve => setTimeout(() => resolve(randomI), convertedTimeRandom));
-        promises.push(onePromise);
+    image.addEventListener('load', function( ){
+        resolve(image); 
+    })
 
-    }
-
-    
-    return promises ;
+    image.addEventListener('error', function(){
+       reject(new Error('image' + path + 'is incorrect or load error'))
+    });
+	});
 }
 
-
-
-const promisesArray = getPromises();
-
-
-Promise.all(promisesArray)
-    .then(results => {
-        console.log("Results:", results.reduce((sum, elem)=> sum + elem,0) );
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
-
+loadImage('/image/dictionary.img').then(function(image){
+    document.body.appendChild(image)
+}).catch(function(error){
+    console.log(error.name)
+})
     </script>
     
     </body>
