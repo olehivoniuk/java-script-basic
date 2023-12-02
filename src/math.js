@@ -1,13 +1,11 @@
-export  function getSquared(num){
-    return num**2
-}; 
+ 
 
- export  function getCubed(num){
-    return num ** 3
-}; 
-
- export  function getQuadraded(num){
-    return num ** 4
-}; 
+export function getSum(arr){
+    let sum = 0; 
+    for ( let ch of arr){
+        sum += ch; 
+    }
+    return sum;
+}
 
 

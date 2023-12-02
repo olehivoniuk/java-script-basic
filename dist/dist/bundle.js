@@ -16,7 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n\nlet res = (0,_test_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nconsole.log(res);\nlet res1 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func1();\nlet res2 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func2();\nlet res3 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func3();\n\nconsole.log(res1, res2, res3);\n\n\n//# sourceURL=webpack://java-script-basic/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n \n\n\n\nconsole.log((0,_math_js__WEBPACK_IMPORTED_MODULE_1__.getSum)(_test_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]))\n\n\n\n//# sourceURL=webpack://java-script-basic/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/math.js":
+/*!*********************!*\
+  !*** ./src/math.js ***!
+  \*********************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getSum: () => (/* binding */ getSum)\n/* harmony export */ });\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n \n \n\nfunction getSum(arr){\n    let sum = 0; \n    for ( let ch of arr){\n        sum += ch; \n    }\n    return sum;\n}\n\n\n\n\n//# sourceURL=webpack://java-script-basic/./src/math.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tes
   \*********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   func1: () => (/* binding */ func1),\n/* harmony export */   func2: () => (/* binding */ func2),\n/* harmony export */   func3: () => (/* binding */ func3)\n/* harmony export */ });\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\n\treturn 'text';\n};\n\nfunction func1 (){\n    return 1;\n}; \nfunction func2 (){\n    return 2;\n}\nfunction func3 (){\n    return 1;\n}\n\n//# sourceURL=webpack://java-script-basic/./src/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([1, 2, 3, 4]);\n\n\n//# sourceURL=webpack://java-script-basic/./src/test.js?");
 
 /***/ })
 
