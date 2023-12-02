@@ -16,17 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n\n\n\nlet res = (0,_test_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nconsole.log(res);\nlet res1 = (0,_test_js__WEBPACK_IMPORTED_MODULE_1__.func1)(); \nlet res2 = (0,_test_js__WEBPACK_IMPORTED_MODULE_1__.func2)(); \n\nconsole.log(res1, res2);\n\n\n//# sourceURL=webpack://java-script-basic/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/math.js":
-/*!*********************!*\
-  !*** ./src/math.js ***!
-  \*********************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getCubed: () => (/* binding */ getCubed),\n/* harmony export */   getQuadraded: () => (/* binding */ getQuadraded),\n/* harmony export */   getSquared: () => (/* binding */ getSquared)\n/* harmony export */ });\nfunction getSquared(num){\n    return num**2\n}; \n\n function getCubed(num){\n    return num ** 3\n}; \n\n function getQuadraded(num){\n    return num ** 4\n}; \n\n\n\n\n//# sourceURL=webpack://java-script-basic/./src/math.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n\nlet res = (0,_test_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nconsole.log(res);\nlet res1 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func1();\nlet res2 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func2();\nlet res3 = _test_js__WEBPACK_IMPORTED_MODULE_0__.func3();\n\nconsole.log(res1, res2, res3);\n\n\n//# sourceURL=webpack://java-script-basic/./src/index.js?");
 
 /***/ }),
 

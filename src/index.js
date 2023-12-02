@@ -1,9 +1,8 @@
-import * as math from './math.js';
-import test, {func1, func2, func3} from './test.js';
-
+import test, * as mod from './test.js'
 let res = test();
 console.log(res);
-let res1 = func1(); 
-let res2 = func2(); 
+let res1 = mod.func1();
+let res2 = mod.func2();
+let res3 = mod.func3();
 
-console.log(res1, res2);
+console.log(res1, res2, res3);
