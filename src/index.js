@@ -1,6 +1,6 @@
-import arr from './test.js'; 
+import str from './test.js'; 
 
 
 import { getSum } from './math.js';
-console.log(getSum(arr))
+console.log(getSum(str))
 

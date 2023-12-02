@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tes
   \*********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getSum: () => (/* binding */ getSum)\n/* harmony export */ });\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./src/test.js\");\n \n \n\nfunction getSum(arr){\n    let sum = 0; \n    for ( let ch of arr){\n        sum += ch; \n    }\n    return sum;\n}\n\n\n\n\n//# sourceURL=webpack://java-script-basic/./src/math.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getSum: () => (/* binding */ getSum)\n/* harmony export */ });\n\n\nfunction getSum(str){\n   let sum =   str.split(',').reduce((sum, elem) => Number(sum) + Number(elem)); \n\n   return sum\n   \n        \n}\n\n\n\n\n//# sourceURL=webpack://java-script-basic/./src/math.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([1, 2, 3, 4]);\n\n\n//# sourceURL=webpack://java-script-basic/./src/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ('1,2,3');\n\n\n//# sourceURL=webpack://java-script-basic/./src/test.js?");
 
 /***/ })
 
