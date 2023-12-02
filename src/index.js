@@ -1,16 +1,25 @@
-import str from './test.js'; 
 import _ from 'lodash';
-import { getSum } from './math.js';
-console.log(getSum(str)); 
 
-// Using lodash functions
-const result = _.map([1, 2, 3, 4, 6], (num) => num ** 2);
-console.log(result); // Output: [2, 4, 6]
+let button = document.createElement('button'); 
+button.textContent = "show the days of the week"
+document.body.appendChild(button); 
 
-const pairs = _.chunk([1, 2, 3, 4, 6, 4],2);
-console.log(pairs);
+let ul = document.createElement('ul'); 
 
-let falsy = _.compact([1, 2, 3, 4, false, 6, 4, null])
-let start = _.head(falsy)
-console.log(falsy , start);
+
+
+button.addEventListener('click', function(){
+    import('./test.js').then(mod => {
+        let res1 = mod.getDays(); 
+        for ( let day of res1){
+            const li = document.createElement('li'); 
+            li.textContent = day;
+            ul.appendChild(li)
+        }
+        
+    })
+   
+    document.body.appendChild(ul)
+ 
+})
 
