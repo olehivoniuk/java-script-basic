@@ -34,8 +34,11 @@ button.addEventListener('click', function(){
 })
 
 
-let res  = math.square(2) + math.cube(3);
-console.log(res);
 
 
 
+let path = 'http://site.ru:3000/dir/eee/page.html#show?a=1&b=2&c=3';
+
+let url = new URL(path);
+let res = url.searchParams;
+console.log(res); // выведет 'http://'
