@@ -1,14 +1,13 @@
 export default {
 	'/handler/': function(data) {
-		console.log(data.get);
+		console.log(data.post);
+		let login = 'oleh91'; 
+		let password = 'oscar'
 
-		let date = new Date(); 
-if (data.get.num1 == (date.getFullYear()).toString()
-   && data.get.num2 == (date.getMonth()+1).toString() 
-    && data.get.num3 == (date.getDate()).toString()){
-	return 'the date is correct ';
-} else{
-	  return ' the date is incorrect '
-   }
-  }
+		if(data.post.test1 == login && data.post.test2 == password){
+			return 'you have accsees to the site data'
+		}else{
+			return 'password is incorrect'
+		}
+	}
 }
