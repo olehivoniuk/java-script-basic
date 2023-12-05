@@ -5,7 +5,7 @@ let button = document.querySelector('#button');
 
 button.addEventListener('click', function() {
 	fetch('./ajax1.html').then(
-		response => {  if (response.status == 200){
+		response => {  if (response.ok){
             console.log(response.status);
 			return response.text();
         }else{
