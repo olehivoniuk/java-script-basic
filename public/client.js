@@ -6,7 +6,7 @@ let button = document.querySelector('#button');
 button.addEventListener('click', function() {
 	fetch('./ajax1.html').then(
 		response => {  if (response.ok){
-            console.log(response.ok);
+            console.log(response.headers.get('Content-Length'))
 			return response.text();
         } else {
 				throw new Error('bad response status');
