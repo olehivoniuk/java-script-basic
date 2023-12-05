@@ -6,18 +6,18 @@ let button = document.querySelector('#button');
 button.addEventListener('click', function() {
 	fetch('./ajax1.html').then(
 		response => {  if (response.ok){
-            console.log(response.status);
+            console.log(response.ok);
 			return response.text();
-        }else{
-           return   'Check the address again.'
-            
-        }}
+        } else {
+				throw new Error('bad response status');
+			}     
+        }
 	).then(
 		text => {
 			div.innerHTML = text;
 		}
 	).catch(
-       error  => {alert(error + 'Network error')}
+       error  => {alert(error + ' ' + 'Network error')}
     );
 });
 
