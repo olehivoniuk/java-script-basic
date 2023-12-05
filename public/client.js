@@ -16,7 +16,9 @@ button.addEventListener('click', function() {
 		text => {
 			div.innerHTML = text;
 		}
-	);
+	).catch(
+       error  => {alert(error + 'Network error')}
+    );
 });
 
 
