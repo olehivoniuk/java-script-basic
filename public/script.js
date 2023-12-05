@@ -5,7 +5,11 @@ let form = document.querySelector('form');
 
 button.addEventListener('click', function(){
     let formData = new FormData(form);
-console.log(formData);
+formData.set('test4', '050505050')
+formData.delete('test2')
+for (let value of formData.values()) {
+	console.log(value);
+}
 console.log(Array.from(formData));
 
 })
