@@ -4,7 +4,9 @@ let button = document.querySelector('#button');
 
 
 button.addEventListener('click', function() {
-	fetch('./data.json').then(response => {
+	fetch('./data.json', {headers: {
+        "Content-Type": 'text/plain',
+    }}).then(response => {
 		return response.json();
        
 	}).then(data => {
