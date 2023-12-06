@@ -1,5 +1,6 @@
 export default {
 	'/handler/': function({ post }) {
-		return Number(post.num1) + Number(post.num2) + Number(post.num3);
+		console.log(post)
+		return Number(post.test1) + Number(post.test2) + Number(post.test3);
 	}
 }

@@ -4,9 +4,14 @@ let button = document.querySelector('#button');
 
 
 button.addEventListener('click', function() {
-	fetch('/handler/?num=1', {
+    let searchParams = new URLSearchParams();
+	
+	searchParams.set('num1', '1');
+	searchParams.set('num2', '2');
+    searchParams.set('num3', '3');
+	fetch('/handler/', {
 		method: 'post',
-		body: 'num1=1&num2=2&num3=3',
+		body: searchParams,
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded',
 		},
