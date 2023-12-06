@@ -1,6 +1,13 @@
 export default {
-	'/handler/': function({ post }) {
-		console.log(post)
-		return Number(post.test1) + Number(post.test2) + Number(post.test3);
+	'/handler/': function({ body }) {
+	
+
+		let arr = JSON.parse(body); 
+
+		 let res = arr.reduce((sum,elem) => sum + elem,0); 
+		 console.log(res);
+		 return res
+
+
 	}
 }
