@@ -4,7 +4,13 @@ let button = document.querySelector('#button');
 
 
 button.addEventListener('click', function() {
-	fetch('/handler/?num=3&num1=6').then(
+	fetch('/handler/?num=1', {
+		method: 'post',
+		body: 'num1=1&num2=2&num3=3',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+    }).then(
 		response => {
             console.log(response)
 			return response.text();
