@@ -1,13 +1,9 @@
 export default {
-	'/handler/': function({ body }) {
-	
+	'/handler/': function({post}) {
+	let num = Number(post.num1)+ Number(post.num2) + Number(post.num3) + Number(post.num4) + Number(post.num5)
+	 let avr = num / 5;
+	 console.log(avr);
 
-		let arr = JSON.parse(body); 
-
-		 let res = arr.reduce((sum,elem) => sum + elem,0); 
-		 console.log(res);
-		 return res
-
-
+		return avr; 
 	}
 }
