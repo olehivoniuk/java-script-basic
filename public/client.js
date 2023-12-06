@@ -4,23 +4,19 @@ let button = document.querySelector('#button');
 
 
 button.addEventListener('click', function() {
-	fetch('./data.json', {headers: {
-        "Content-Type": 'text/plain',
-    }}).then(response => {
-		return response.json();
-       
-	}).then(data => {
-		console.log(data);
-
-      
-        for (let dataCell of data){
-            const li = document.createElement('li'); 
-            li.textContent = dataCell; 
-            document.body.appendChild(li); 
-
-        }
-        return data; 
-	});
+	fetch('/handler/?num=3&num1=6').then(
+		response => {
+            console.log(response)
+			return response.text();
+		}
+	).then(
+		text => {
+			console.log(text);
+            let p = document.createElement('p');
+            p.textContent = text;
+            document.body.appendChild(p)
+		}
+	);
 });
 
 
