@@ -1,22 +1,18 @@
 
+let arr = fillArr('x', 5);
 
-let curr = new Date();
-let currentMonth = curr.getMonth();
-let currentYear = curr.getFullYear();
-
-for (let i = currentMonth; i <= 11; i++) {
-    let lastDayOfMonth = new Date(currentYear, i + 1, 0).getDate();
-
-    for (let j = 1; j <= lastDayOfMonth; j++) {
-        let date = new Date(currentYear, i, j);
-
-        if (date.getDate() === 13 && date.getDay() === 5) {
-            console.log(date);
-        }
-    }
+function fillArr(val, amount) {
+	let arr = [];
+	
+	for (let i = 1; i <= amount; i++) {
+		arr.push(val);
+	}
+	
+	return arr;
 }
 
-
+const x = Array(5).fill("x", 0);
+console.log(x)
 
 
 
