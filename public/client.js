@@ -1,23 +1,24 @@
-let form = document.querySelector('form');
 
-form.addEventListener('submit', function(event) {
-	 fetch('/handler/', {
-		method: 'POST',
-		body: new FormData(this) // передаем ссылку на форму
-	}).then(
-    	response => {
-         console.log(response)
-        return response.text();
-        		}
-        	).then(
-        		text => {
-        			console.log(text);
-                    let p = document.createElement('p');
-                    p.textContent = text;
-                    document.body.appendChild(p)
-        		}
-        	);;
-});
+
+let curr = new Date();
+let currentMonth = curr.getMonth();
+let currentYear = curr.getFullYear();
+
+for (let i = currentMonth; i <= 11; i++) {
+    let lastDayOfMonth = new Date(currentYear, i + 1, 0).getDate();
+
+    for (let j = 1; j <= lastDayOfMonth; j++) {
+        let date = new Date(currentYear, i, j);
+
+        if (date.getDate() === 13 && date.getDay() === 5) {
+            console.log(date);
+        }
+    }
+}
+
+
+
+
 
 
 
