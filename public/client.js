@@ -23,17 +23,24 @@ let arr = [
 	},
 ];
 
-let id = 'JAmjRlfQT8rLTm5tG2m1L';
+button.addEventListener('click', function() {
+    let id = 'JAmjRlfQT8rLTm5tG2m1L';
+    let prop2 = 'prop2';
+    let prop3 = 'prop3';
 
+    let targetElement = arr.find(element => element.id === id);
 
+        if (prop2 in targetElement) {
+            targetElement[prop2] += '!';
+        } 
+        if (prop3 in targetElement) {
+            targetElement[prop3] += '!';
+        }
 
-button.addEventListener('click', function(){
+        console.log('Updated array:', arr);
 
-    let res = arr.filter(elem => elem.id !== id);
-
-    console.log(res);
-})
-
+    
+});
 
 
 
