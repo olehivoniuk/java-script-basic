@@ -1,9 +1,9 @@
 
 function getLength(str){
-    console.log(str.length)
+    console.log(str[str.length-1])
 }
 
-getLength('-1')
+getLength('HelloJ')
 
 
 
