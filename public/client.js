@@ -1,21 +1,19 @@
 
-function getFirstDigit(num1, num2){
+function getFirstDigit(num1,num2){
 
-   let firstDigit =  num1.toString().split('').slice(0,1); 
-   let secondDigit =  num2.toString().split('').slice(0,1)
-   console.log(firstDigit)
-   if (Number(firstDigit) === Number(secondDigit)){
-       console.log("the first digits are the same");
+   if (num1 % num2 == 0 ){
+       console.log(
+           ('nothing is left')
+       )
    } else{
-       console.log('the first digits are different ')
+       console.log('the numbers are not even')
    }
 
-  
 
  
 }
 
-getFirstDigit(52, 53)
+getFirstDigit(4,3)
 
 
 
