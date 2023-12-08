@@ -1,19 +1,13 @@
 
-function getFirstDigit(num1,num2){
+function getIntNumbers(num){
 
-   if (num1 % num2 == 0 ){
-       console.log(
-           ('nothing is left')
-       )
-   } else{
-       console.log('the numbers are not even')
-   }
-
-
+ for ( let i = 1; i<=num; i++){
+     console.log(parseInt(i))
+ }
  
 }
 
-getFirstDigit(4,3)
+getIntNumbers(100)
 
 
 
