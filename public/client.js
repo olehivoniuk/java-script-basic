@@ -1,27 +1,12 @@
-let ul = document.querySelector('ul');
+let  button = document.querySelector('button'); 
 
-let table = document.createElement('table'); 
-document.body.appendChild(table); 
+let arr = [1, 2, 3, 4, 5];
+let ind = 2;
 
-
-for (let i = 1; i <= 100; i++) {
-	let tr = document.createElement('tr');
-	table.appendChild(tr);
-    for ( let k = 1; k <=100; k++){
-        let td = document.createElement('td')
-        td.textContent = k ; 
-        tr.appendChild(td)
-    }
-}
-
-table.addEventListener('click', function(event) {
-	let td = event.target.closest('td');
-	
-	if (td) {
-		td.style.color = 'red '
-	}
-});
-
+button.addEventListener('click', function(){
+    let res = [...arr.slice(0,ind), "!", ...arr.slice(ind)]
+    console.log(res);
+})
 
 
 
