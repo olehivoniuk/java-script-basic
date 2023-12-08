@@ -1,13 +1,18 @@
 
-function getIntNumbers(num){
+function gerReversed(str){
 
- for ( let i = 1; i<=num; i++){
-     console.log(parseInt(i))
- }
- 
+    let arr = str.split('')
+    console.log(arr)
+
+    for ( let i = arr.length - 1; i >= 0; i--){
+        console.log(arr[i])
+    }
+
+    
+
 }
 
-getIntNumbers(100)
+gerReversed("Hello")
 
 
 
