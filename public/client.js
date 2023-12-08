@@ -1,11 +1,23 @@
 
 function getArr(arr){
- 
-    console.log(arr.filter( elem => elem.endsWith('.html')?elem : null))
 
+//   let arr1 = []
+
+//     for ( let i = 0; i < arr.length - 1; i++ ){
+//         arr1.push(arr[i] + arr[i]*0.1)
+//     }
+
+//     console.log(arr1);
+    
+    
+     let res = arr.map(elem =>  elem + elem * 0.1 )
+     console.log(res);
+
+
+   
 }
 
-getArr(['1.456.html', 'http://2.125', '3.32.html', 'http://4.1', '5.34'])
+getArr([2,4,5,6])
 
 
 
