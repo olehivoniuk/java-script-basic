@@ -1,17 +1,19 @@
 
-function getLastLetter(str){
+function getFirstDigit(num){
 
-   let lastLetter =  str[str.length -1 ]
+   let firstDigit =  num.toString().split('').slice(0,1)
+
+   console.log(Number(firstDigit))
    
    
-   if (lastLetter != 'p' ){
+   if (firstDigit != 'p' ){
        console.log('the words ends with all letters but p')
    }else{
        console.log( str[str.length - 2])
    }
 }
 
-getLastLetter('Hello Horlp')
+getFirstDigit(444)
 
 
 
