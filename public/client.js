@@ -1,15 +1,16 @@
 
-function checkNum(num){
+function checFirstLetter(str){
 
-    if (num % 2 ===0 ){
-        console.log("the number is even")
-    } else{
-        console.log( 'the number is odd')
-    }
-    
+   let arr =  str.split(' ');
+   
+   if (arr[0].slice(0,1) == arr[1].slice(0,1)){
+       console.log('the words starts with the same letters')
+   }else(
+       console.log('the words starts with differet letters')
+   )
 }
 
-checkNum(3)
+checFirstLetter('Hello Horld')
 
 
 
