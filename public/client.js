@@ -1,16 +1,17 @@
 
-function checFirstLetter(str){
+function getLastLetter(str){
 
-   let arr =  str.split(' ');
+   let lastLetter =  str[str.length -1 ]
    
-   if (arr[0].slice(0,1) == arr[1].slice(0,1)){
-       console.log('the words starts with the same letters')
-   }else(
-       console.log('the words starts with differet letters')
-   )
+   
+   if (lastLetter != 'p' ){
+       console.log('the words ends with all letters but p')
+   }else{
+       console.log( str[str.length - 2])
+   }
 }
 
-checFirstLetter('Hello Horld')
+getLastLetter('Hello Horlp')
 
 
 
