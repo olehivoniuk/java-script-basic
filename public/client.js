@@ -23,36 +23,15 @@ let arr = [
 	},
 ];
 
-let newElem = {
-	id: 'GMNCZnFT4rbBP6cirA0Ha',
-	prop1: 'value41',
-	prop2: 'value42',
-	prop3: 'value43',
-};
+let id = 'JAmjRlfQT8rLTm5tG2m1L';
 
-function getId(length = 16) {
-	let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	
-	let res = '';
-	
-	for (let i = 0; i < length; i++) {
-		res += chars[Math.floor(Math.random() * chars.length)];
-	}
-	
-	return res;
-}
 
 
 button.addEventListener('click', function(){
-    let copy = Object.assign([], arr);
-copy.push(newElem);
 
-for ( let i = 0 ; i < copy.length; i++){
-    copy[i].id = getId()
+    let res = arr.filter(elem => elem.id !== id);
 
-}
-let res = copy;
-console.log(res);
+    console.log(res);
 })
 
 
