@@ -1,14 +1,16 @@
 
-function gerSum(num){
+function getArr(arr){
 
-      
-     let arr = num.toString().split(''); 
-     let sum = arr.reduce((sum, elem )=> sum + Number(elem),0)
-     console.log(sum);
+    let arr1 = []
+
+    for(let i = 0; i <= arr.length - 1; i++ ){
+      arr1.push( arr[i].toFixed(1));
+    }
+    console.log(arr1)
 
 }
 
-gerSum(12345)
+getArr([1.456, 2.125, 3.32, 4.1, 5.34])
 
 
 
