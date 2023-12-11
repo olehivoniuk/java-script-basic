@@ -1,20 +1,13 @@
-function getSum(num){
+function deleteElem(arr, elem){
 
-    for ( let i = 1; i <= num; i++){
+    let index = arr.indexOf(elem); 
+     arr.splice(index, 1); 
 
-        let firstDigit = i.toString().slice(0,1)
-        let secondDigit = i.toString().slice(1,2); 
+    console.log(arr);
 
-        let sum = Number(firstDigit) + Number(secondDigit); 
 
-        if ( sum ==  5){
-            console.log(i);  
-        }  
-    }
-   
- 
 }
-getSum(1000)
+deleteElem([1, 2, 3, 4, 5, 6], 4)
 
 
 
