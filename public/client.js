@@ -1,18 +1,20 @@
 
-function findSum(arr){
+function findMatch(str){
 
-   let arr1 =  arr.splice(0, arr.length/2); 
-   let arr2 = arr.splice(arr.length/2 - 1 )
-   let sum1 = arr1.reduce ((sum,elem) => sum + elem, 0)
-   let sum2 = arr2.reduce ((sum,elem) => sum + elem, 0)
+   let arr = str.split(' '); 
+   let arr1 = arr[0].split('')
+   let arr2 = arr[1].split('')
 
-   let res = sum1/sum2; 
-
-   console.log(res);
+   if (arr1[arr1.length - 1] == arr2[0]){
+       console.log("Math has been found")
+   } else{
+       console.log('no match has been found ')
+   }
+   
 
 
    
 
 }
 
-findSum([1, 2, 3, 4, 5, 6])
+findMatch('hello oscar')
