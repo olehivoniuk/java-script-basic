@@ -1,13 +1,13 @@
-function deleteElem(arr, elem){
+function getSumOfTheHalf(arr){
 
-    let index = arr.indexOf(elem); 
-     arr.splice(index, 1); 
+    let half = arr.slice(0, arr.length / 2) 
 
-    console.log(arr);
-
+   let res = half.reduce((sum, elem) => sum + elem, 0) 
+    
+    console.log(res);
 
 }
-deleteElem([1, 2, 3, 4, 5, 6], 4)
+getSumOfTheHalf([1, 2, 3, 4, 5, 6])
 
 
 
