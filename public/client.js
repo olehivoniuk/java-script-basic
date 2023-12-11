@@ -1,10 +1,11 @@
-function getSubarrays(arr1, arr2){
+function findFirstZero(str){
 
-    let a = arr1.concat(arr2); 
-    console.log(a);
+    let index = str.indexOf('0')
+    console.log(index);
+   
  
 }
-getSubarrays([1, 2, 3], [4, 5, 6])
+findFirstZero('shfkawhf0000')
 
 
 
