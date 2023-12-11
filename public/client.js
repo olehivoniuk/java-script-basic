@@ -1,18 +1,9 @@
 
-function findMatch(str){
+function findTotal(str){
 
-    let arr = str.split(''); 
-
-    let count = 0; 
-    
-    for ( let i = 0; i < arr.length; i++){
-        if ( arr[i] == 'e' ){
-            count++;
-            if (count == 3){
-                console.log(i)
-            }
-        }
-    }
+    let arr = str.split(',').join(''); 
+    let arr1 = arr.split('')
+    console.log(arr1.reduce((sum,elem) => sum + Number(elem), 0));
 }
 
-findMatch('hello oscareeee')
+findTotal('12,34,56')
