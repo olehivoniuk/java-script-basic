@@ -1,20 +1,18 @@
 
 function findMatch(str){
 
-   let arr = str.split(' '); 
-   let arr1 = arr[0].split('')
-   let arr2 = arr[1].split('')
+    let arr = str.split(''); 
 
-   if (arr1[arr1.length - 1] == arr2[0]){
-       console.log("Math has been found")
-   } else{
-       console.log('no match has been found ')
-   }
-   
-
-
-   
-
+    let count = 0; 
+    
+    for ( let i = 0; i < arr.length; i++){
+        if ( arr[i] == 'e' ){
+            count++;
+            if (count == 3){
+                console.log(i)
+            }
+        }
+    }
 }
 
-findMatch('hello oscar')
+findMatch('hello oscareeee')
