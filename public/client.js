@@ -1,12 +1,18 @@
 
-function deleteSymbol(str) {
-    let arr = str.split('');
+function findSum(arr){
 
-    arr = arr.filter((elem, index) => index !== arr.length - 2);
+   let arr1 =  arr.splice(0, arr.length/2); 
+   let arr2 = arr.splice(arr.length/2 - 1 )
+   let sum1 = arr1.reduce ((sum,elem) => sum + elem, 0)
+   let sum2 = arr2.reduce ((sum,elem) => sum + elem, 0)
 
-    let result = arr.join('');
+   let res = sum1/sum2; 
 
-    console.log(result);
+   console.log(res);
+
+
+   
+
 }
 
-deleteSymbol("HelLo");
+findSum([1, 2, 3, 4, 5, 6])
