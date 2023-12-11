@@ -1,6 +1,12 @@
 
-let numbers = [1, -2, 3, -4, 5, -6];
+function deleteSymbol(str) {
+    let arr = str.split('');
 
-let belowZero = numbers.filter(num => num > 0);
+    arr = arr.filter((elem, index) => index !== arr.length - 2);
 
-console.log(belowZero);
+    let result = arr.join('');
+
+    console.log(result);
+}
+
+deleteSymbol("HelLo");
