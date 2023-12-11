@@ -1,9 +1,15 @@
 
-function findTotal(str){
+function formatDateToObject(dateString) {
+    const [year, month, day] = dateString.split('-');
 
-    let arr = str.split(',').join(''); 
-    let arr1 = arr.split('')
-    console.log(arr1.reduce((sum,elem) => sum + Number(elem), 0));
+    return {
+        year,
+        month,
+        day,
+    };
 }
 
-findTotal('12,34,56')
+const inputDate = '2025-12-31';
+const result = formatDateToObject(inputDate);
+
+console.log(result);
