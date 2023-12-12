@@ -1,11 +1,14 @@
-
-function separateGroups(str) {
-    let reversed = str.split('').reverse().join('');
-    let result = reversed.replace(/(\d{3})(?=\d)/g, '$1 ');
-    return result.split('').reverse().join('');
+let str = 'AbCdE';
+ 
+let newStr = "";
+for (let char of str) {
+    let upper = char.toUpperCase();
+ 
+    if (char === upper) {
+        newStr += char.toLowerCase();
+    } else {
+        newStr += upper;
+    }
 }
-
-let separatedNumber = separateGroups('1234567');
-console.log(separatedNumber);
-
-
+// "hELLO, WORLD!"
+console.log(newStr);
