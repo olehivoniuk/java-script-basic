@@ -1,12 +1,11 @@
 
-function getArray(arr) {
-
-    
-     let res =  arr.map(elem => Number(elem.toString().split('').reverse().join('')) )
-    
-      console.log(res)
+function separateGroups(str) {
+    let reversed = str.split('').reverse().join('');
+    let result = reversed.replace(/(\d{3})(?=\d)/g, '$1 ');
+    return result.split('').reverse().join('');
 }
 
-console.log(getArray([123, 456, 789]));
+let separatedNumber = separateGroups('1234567');
+console.log(separatedNumber);
 
 
