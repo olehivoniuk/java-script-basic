@@ -1,23 +1,21 @@
 
-function getCount(num) {
+function convertToUpperCase(str) {
+    let result = '';
 
-
-    let arr = num.toString().split('')
-    console.log(arr);
-
-    let count = 0; 
-    for ( let i = 0; i < arr.length; i++){
-
-        if ( arr[i] % 2 == 0){
-        count ++
+    for (let i = 0; i < str.length; i++) {
+        if (i % 2 == 0) {
+            result += str[i].toUpperCase();
+        } else {
+            result += str[i];
         }
-
     }
-    console.log(count)
 
-
+    return result;
 }
 
-getCount(12132224682)
+let originalString = 'abcde';
+let modifiedString = convertToUpperCase(originalString);
+
+console.log(modifiedString);
 
 
