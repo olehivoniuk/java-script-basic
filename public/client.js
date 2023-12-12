@@ -1,23 +1,13 @@
 
-function getDifference(arr) {
+function getArray(str) {
 
-    let sum1 = 0
+    let regex = /[0-9]/g;
+    let matches = str.match(regex); 
 
-    for ( let i = 0; i <= arr.length - 1; i+=2){
-            sum1 += arr[i]
-        
-    }
-
-    let sum2 = 0
-    for ( let i = 1; i <= arr.length - 1; i+=2){
-       
-        sum2 += arr[i]
-    
-}
-console.log(sum1/sum2)
+    console.log(matches.map(elem => str.indexOf(elem)));
     
 }
 
-getDifference([1, 2, 3, 4, 5, 6]);
+getArray('hello123world');
 
 
