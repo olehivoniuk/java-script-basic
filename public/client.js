@@ -1,21 +1,18 @@
 
 function convertToUpperCase(str) {
-    let result = '';
 
-    for (let i = 0; i < str.length; i++) {
-        if (i % 2 == 0) {
-            result += str[i].toUpperCase();
-        } else {
-            result += str[i];
-        }
+    let result = str.split(' ')
+    let arr2 = []; 
+    for ( let i = 0; i< result.length; i++){
+        let arr1 =  result[i].split('')
+         let two = arr1[0].toUpperCase() + arr1.join('').slice(1)
+          arr2.push(two)
+          
+
     }
-
-    return result;
+    console.log(arr2.join(' '))
 }
 
-let originalString = 'abcde';
-let modifiedString = convertToUpperCase(originalString);
-
-console.log(modifiedString);
+convertToUpperCase('aaa bbb ccc')
 
 
