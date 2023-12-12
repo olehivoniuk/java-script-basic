@@ -1,15 +1,12 @@
 
-function formatDateToObject(dateString) {
-    const [year, month, day] = dateString.split('-');
+function getPositionOfDigit(str) {
 
-    return {
-        year,
-        month,
-        day,
-    };
+    let res = str.search(/[0-9]/g)
+
+    console.log(res)
+    
 }
 
-const inputDate = '2025-12-31';
-const result = formatDateToObject(inputDate);
+getPositionOfDigit("helloOscar28issoon")
 
-console.log(result);
+
