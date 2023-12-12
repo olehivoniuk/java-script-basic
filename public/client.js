@@ -1,18 +1,17 @@
 
 function convertToUpperCase(str) {
 
-    let result = str.split(' ')
-    let arr2 = []; 
+    let result = str.split('')
+    let arr1 = []
     for ( let i = 0; i< result.length; i++){
-        let arr1 =  result[i].split('')
-         let two = arr1[0].toUpperCase() + arr1.join('').slice(1)
-          arr2.push(two)
-          
-
+        if ( result[i] == 0){
+            arr1.push(i)
+        }
     }
-    console.log(arr2.join(' '))
+    console.log(arr1)
+
 }
 
-convertToUpperCase('aaa bbb ccc')
+convertToUpperCase('023m0df0dfg0')
 
 
