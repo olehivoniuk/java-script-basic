@@ -1,13 +1,12 @@
 
-function getArray(str) {
+function getArray(arr) {
 
-    let regex = /[0-9]/g;
-    let matches = str.match(regex); 
-
-    console.log(matches.map(elem => str.indexOf(elem)));
     
+     let res =  arr.map(elem => Number(elem.toString().split('').reverse().join('')) )
+    
+      console.log(res)
 }
 
-getArray('hello123world');
+console.log(getArray([123, 456, 789]));
 
 
