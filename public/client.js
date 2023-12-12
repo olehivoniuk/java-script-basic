@@ -1,12 +1,12 @@
 
-function getPositionOfDigit(str) {
+function getSorted(obj) {
 
-    let res = str.search(/[0-9]/g)
+    console.log(Object.keys(obj))
+    console.log(Object.values(obj))
 
-    console.log(res)
     
 }
 
-getPositionOfDigit("helloOscar28issoon")
+getSorted({1: 'a', 2: 'b', 3: 'c'})
 
 
