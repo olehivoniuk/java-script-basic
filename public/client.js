@@ -1,17 +1,16 @@
 
 function convertToUpperCase(str) {
 
-    let result = str.split('')
-    let arr1 = []
-    for ( let i = 0; i< result.length; i++){
-        if ( result[i] == 0){
-            arr1.push(i)
-        }
+    let arr = str.split('')
+
+    for ( let i = 3; i < arr.length; i+=2){
+          console.log(arr[i]);
+        
     }
-    console.log(arr1)
+    
 
 }
 
-convertToUpperCase('023m0df0dfg0')
+convertToUpperCase('abcdefg')
 
 
