@@ -1,14 +1,13 @@
-function mergePairs(arr) {
-    let result = [];
+function capitalizeEverySecondWord(str) {
+  let words = str.split(' ');
 
-    for (let i = 0; i < arr.length; i += 2) {
-        let pair = arr.slice(i, i + 2);
-        result.push(parseInt(pair.join('')));
-    }
+  for (let i = 1; i < words.length; i += 2) {
+      if (words[i].length > 0) {
+          words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+      }
+  }
 
-    return result;
+  return words.join(' ');
 }
 
-let inputArray = [1, 2, 3, 4, 5, 6];
-let mergedPairs = mergePairs(inputArray);
-console.log(mergedPairs);
+console.log(capitalizeEverySecondWord('aaa bbb ccc eee fff'));
