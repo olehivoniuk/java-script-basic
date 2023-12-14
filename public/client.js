@@ -1,18 +1,20 @@
-function checkTheNumberOfCapitalLetters(str) {
-  let arr = str.split('');
-  let countCapitalLetters = 0;
+function checkTheNumberOfNumbers(str) {
+  let arr = str.split(' ');
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === arr[i].toUpperCase() && arr[i] !== ' ') {
-      countCapitalLetters++;
-    }
-  }
+  let arr1 = [];
 
-  if (countCapitalLetters >= 2) {
-    console.log("There are more than 2 capital letters.");
-  } else {
-    console.log('The number of capital letters is less than 2.');
+
+  for ( let i = 0; i< arr.length; i++){
+    
+     if (arr[i].split('').length <= 3  ){
+       arr1.push(arr[i])
+     }
+    
   }
+  return arr1.join(' ')
+ 
+
+
 }
 
-checkTheNumberOfCapitalLetters('Helloorld');
+console.log(checkTheNumberOfNumbers('1 22 333 4444 22 5555 1'))
