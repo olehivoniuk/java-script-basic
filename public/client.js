@@ -1,9 +1,17 @@
-function getTotalOfPairs(arr) {
+function getTotalOfPairs(str) {
 
-  let res = arr.reverse()
+  let regex = /[a-zA-z]/g
+  
+    let res =  str.match(regex );
 
-  console.log(res);
+     if (res.length >3){
+       console.log("String has more than 3 letters ")
+     } else{
+       console.log(
+         'string has less than 3 letters'
+       )
+     }
  
 }
 
-getTotalOfPairs([1, 2, 3, 4, 5])
+getTotalOfPairs('ld12')
