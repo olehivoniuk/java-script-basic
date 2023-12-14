@@ -1,17 +1,15 @@
-function getTotalOfPairs(str) {
+function getLastEvenNumber(num) {
 
-  let regex = /[a-zA-z]/g
-  
-    let res =  str.match(regex );
+  let arr = num.toString().split('').reverse()
+  console.log(arr)
 
-     if (res.length >3){
-       console.log("String has more than 3 letters ")
-     } else{
-       console.log(
-         'string has less than 3 letters'
-       )
-     }
+  let res = arr.find(elem => {
+    if (elem % 2 == 0 ){
+      return elem
+    }
+  })
+  console.log( res);
  
 }
 
-getTotalOfPairs('ld12')
+getLastEvenNumber(4523468686969602)
