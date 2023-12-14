@@ -1,20 +1,5 @@
-function checkTheNumberOfNumbers(str) {
-  let arr = str.split(' ');
+let arr1 = [1, 2, 3];
+let arr2 = ['a', 'b', 'c'];
 
-  let arr1 = [];
-
-
-  for ( let i = 0; i< arr.length; i++){
-    
-     if (arr[i].split('').length <= 3  ){
-       arr1.push(arr[i])
-     }
-    
-  }
-  return arr1.join(' ')
- 
-
-
-}
-
-console.log(checkTheNumberOfNumbers('1 22 333 4444 22 5555 1'))
+let arr3 = [1, 2, ...arr2,  3]
+console.log(arr3);
