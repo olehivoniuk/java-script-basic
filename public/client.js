@@ -1,13 +1,14 @@
-function capitalizeEverySecondWord(str) {
+function moveToUpperCase(str) {
   let words = str.split(' ');
+  
 
-  for (let i = 1; i < words.length; i += 2) {
-      if (words[i].length > 0) {
-          words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+  for (let i = 0; i < words.length; i += 1) {
+      if (words[i].length <= 3) {
+          words[i] = words[i].toUpperCase()
       }
   }
 
-  return words.join(' ');
+    console.log (words.join(' '))
 }
 
-console.log(capitalizeEverySecondWord('aaa bbb ccc eee fff'));
+moveToUpperCase('a bc def ghij');
