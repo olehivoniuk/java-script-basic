@@ -1,15 +1,19 @@
-function getLastEvenNumber(num) {
+function replaceFirstCharacter(str) {
+  let words = str.split(' ');
 
-  let arr = num.toString().split('').reverse()
-  console.log(arr)
-
-  let res = arr.find(elem => {
-    if (elem % 2 == 0 ){
-      return elem
+  // Replace the first character of each word with '!'
+  let modifiedWords = words.map(word => {
+    if (word.length > 0) {
+      return '!' + word.slice(1);
+    } else {
+      return word;
     }
-  })
-  console.log( res);
- 
+  });
+
+  // Join the modified words back into a string
+  let result = modifiedWords.join(' ');
+
+  console.log(result);
 }
 
-getLastEvenNumber(4523468686969602)
+replaceFirstCharacter('abcde abcde abcde');
