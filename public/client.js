@@ -1,21 +1,18 @@
-function deleteOddNumbers(num) {
+function checkTheNumberOfCapitalLetters(str) {
+  let arr = str.split('');
+  let countCapitalLetters = 0;
 
-  let arr = num.toString().split(''); 
-
-  let arr1 = [];
-
-  for ( let i = 0; i<= arr.length - 1; i++){
-
-    if (arr[i] % 2 == 0  ){
-      arr1.push(arr[i])
-    } 
-
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i].toUpperCase() && arr[i] !== ' ') {
+      countCapitalLetters++;
+    }
   }
-  return arr1.join('')
 
-
- 
-  
+  if (countCapitalLetters >= 2) {
+    console.log("There are more than 2 capital letters.");
+  } else {
+    console.log('The number of capital letters is less than 2.');
+  }
 }
 
-console.log(deleteOddNumbers('123789'));
+checkTheNumberOfCapitalLetters('Helloorld');
