@@ -1,12 +1,21 @@
-function moveToUpperCase(symb) {
- 
-  if ( symb == symb.toUpperCase()){
+function deleteOddNumbers(num) {
 
+  let arr = num.toString().split(''); 
 
-    console.log("the symbol is in upper case ");
-  } else {
-    console.log("The sypmbol is in lower case ")
+  let arr1 = [];
+
+  for ( let i = 0; i<= arr.length - 1; i++){
+
+    if (arr[i] % 2 == 0  ){
+      arr1.push(arr[i])
+    } 
+
   }
+  return arr1.join('')
+
+
+ 
+  
 }
 
-moveToUpperCase('O');
+console.log(deleteOddNumbers('123789'));
