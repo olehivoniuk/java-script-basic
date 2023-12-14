@@ -1,19 +1,13 @@
-function replaceFirstCharacter(str) {
-  let words = str.split(' ');
+function checkConsequence(arr) {
 
-  // Replace the first character of each word with '!'
-  let modifiedWords = words.map(word => {
-    if (word.length > 0) {
-      return '!' + word.slice(1);
-    } else {
-      return word;
+  for ( let i = 0; i < arr.length; i++){
+
+    if ( arr[i] == arr[i + 1]){
+     return (`Match has been found on ${i} and ${i+1} position`)
     }
-  });
+  }
 
-  // Join the modified words back into a string
-  let result = modifiedWords.join(' ');
-
-  console.log(result);
+  return false; 
 }
 
-replaceFirstCharacter('abcde abcde abcde');
+console.log(checkConsequence([1, 2, 3, 3, 4, 4, 5]));
