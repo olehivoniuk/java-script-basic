@@ -1,11 +1,18 @@
-function sortInnerArrays(arr){
+function sortInnerArrays(num){
 
-   let res  = arr.splice(arr.length - 2)
-   console.log(res);
-   console.log(arr)
+
+  for ( let i = 10; i<= num; i++){
+       let loop = i.toString().split('')
+
+      if (loop[loop.length-2] %2 ==0 && loop[loop.length-2] !=0){
+        console.log(loop.join(''))
+      }
+  }
+
+
    
 }
 
- sortInnerArrays([1, 2, 3, 4, 5])
+ sortInnerArrays(1000)
 
 
