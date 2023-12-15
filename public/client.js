@@ -1,12 +1,21 @@
 
 
-function sortNumber(num){
+function createHyphenatedSting(num){
 
-  let arr = num.toString().split('')
- 
-  console.log(arr.sort().join(''));
-   
-  
+  let arr = []
+
+  for ( let i = 1; i <= num; i++ ){
+    arr.push(`-${i}`)
+    
+  }
+
+  return arr.join('')
 }
 
-sortNumber(35142)
+ let res = createHyphenatedSting(5)
+
+ console.log(`${res}-`);
+
+// let num = 5;
+// let zerosString = '-0'.repeat(num);
+// console.log(`${zerosString}-`);
