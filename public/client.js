@@ -1,15 +1,20 @@
 
 
-function getNumbers(num){
+function changeArraysOrder(arr){
 
+ let arr1 = []; 
+
+  for ( let i = 0 ; i < arr.length; i+=2){
+      arr1.push( arr.slice(i, i+2).reverse());
+  }
+
+   console.log (arr1.join(',').split(','))
+ 
+  return arr1
   
 
-  for (let i = 10; i < num; i++ ){
-  if (i.toString().split('')[0] %2 == 0){
-    console.log(i);
-  }
-
-  }
+  
 }
 
-getNumbers(1000)
+ changeArraysOrder([1, 2, 3, 4, 5, 6])
+ 
