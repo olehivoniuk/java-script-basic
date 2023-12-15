@@ -2,8 +2,8 @@
 
 function filterArray(arr){
 
-   let res  = arr.filter(elem => (elem % 5 == 0)? elem : null )
-  
+   let res  = arr.filter(elem =>  (elem.toString().includes('0'))? elem : null)
+
    console.log(res);
   
 }
