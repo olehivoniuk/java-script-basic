@@ -1,26 +1,16 @@
-function findTotal(arr){
+function delete3LettersWords(arr){
 
-  let sum = 0;
+  let arr1 = []; 
 
-  for ( let i = 0; i< arr.length; i++){
-
-      let sums = arr[i].reduce((sum, elem) => sum + elem,0)
-      sum += sums
-
-    
-  }
-
-  return sum
+     arr.forEach(elem => (elem.split('').length <3)? arr1.push(elem): null   )
 
   
+     return arr1;
  }
 
- let res = findTotal([
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9],
-])
+  let res = delete3LettersWords(['ggg', 'j', 'ghghghg', 'k', 'dhdd', 'ggg'])
 
-console.log(res);
+ console.log(res)
+
 
 
