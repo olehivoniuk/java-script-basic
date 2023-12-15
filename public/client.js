@@ -1,11 +1,12 @@
 
 
-function filterArray(arr){
+function sortNumber(num){
 
-   let res  = arr.some(elem =>  (elem.toString().includes('3'))? true : false)
-
-   console.log(res);
+  let arr = num.toString().split('')
+ 
+  console.log(arr.sort().join(''));
+   
   
 }
 
-filterArray([1,5,25,20,50,41,40,5])
+sortNumber(35142)
