@@ -1,15 +1,21 @@
-function checkOddNumbers(num){
+function checkIfPalindrome(str){
 
-  let arr1 = num.toString().split(''); 
+  let arr1 = str.split('').reverse().join(''); 
 
-    let condition = arr1.every(elem => (elem % 2 != 0)? true : false)
-
-  console.log(condition)
+  let arr = str.split('').join('')
 
      
- }
 
-  checkOddNumbers(1357)
+   
+    console.log(arr)
+
+    console.log(arr1)
+
+    console.log(arr == arr1)
+  
+
+}
+  checkIfPalindrome('abcba')
 
 
 
