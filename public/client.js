@@ -1,15 +1,26 @@
-function deleteEachSecondWord(str){
+function findTotal(arr){
 
-  let arr = str.split(' '); 
+  let sum = 0;
 
-   for ( let i = 1; i < arr.length; i+=1){
-     arr.splice(i, 1)
+  for ( let i = 0; i< arr.length; i++){
 
-   }
+      let sums = arr[i].reduce((sum, elem) => sum + elem,0)
+      sum += sums
 
-   return arr
+    
+  }
+
+  return sum
+
+  
  }
 
-console.log(deleteEachSecondWord('aaa bbb ccc eee fff ddd jjj'))
+ let res = findTotal([
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+])
+
+console.log(res);
 
 
