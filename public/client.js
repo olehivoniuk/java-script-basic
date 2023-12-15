@@ -1,13 +1,15 @@
-function checkConsequence(arr) {
+function checkProgression(num){
 
-  for ( let i = 0; i < arr.length; i++){
+   let arr = num.toString().split('')
 
-    if ( arr[i] == arr[i + 1]){
-     return (`Match has been found on ${i} and ${i+1} position`)
-    }
-  }
-
-  return false; 
+   for ( let i = 0; i< arr.length; i++){
+     if ( arr[i] > arr [i + 1]){
+       return false
+     } else{
+       return true
+     }
+   }
 }
 
-console.log(checkConsequence([1, 2, 3, 3, 4, 4, 5]));
+let res = checkProgression(1123451); 
+console.log(res)
