@@ -1,22 +1,11 @@
 function sortInnerArrays(arr){
 
-  let arr1 = []
-
-   for ( let i = 0 ; i< arr.length; i++){
-         let part = arr[i].sort();
-         arr1.push(part)
-   }
-
-   return arr1;
-   
-
+   let res  = arr.splice(arr.length - 2)
+   console.log(res);
+   console.log(arr)
    
 }
 
-  let res = sortInnerArrays([
-	[2, 1, 4, 3, 5],
-	[3, 5, 2, 4, 1],
-	[4, 3, 1, 5, 2],
-]); 
+ sortInnerArrays([1, 2, 3, 4, 5])
 
-console.log(res);
+
