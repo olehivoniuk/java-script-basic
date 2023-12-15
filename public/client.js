@@ -1,18 +1,17 @@
-function sortInnerArrays(num){
+function deleteEachFithElem(arr){
 
+  // let res = arr.filter((elem, index) => (index == index + 5)? elem: null)
 
-  for ( let i = 10; i<= num; i++){
-       let loop = i.toString().split('')
+  // return res
 
-      if (loop[loop.length-2] %2 ==0 && loop[loop.length-2] !=0){
-        console.log(loop.join(''))
-      }
-  }
+  for(let i = 4; i < arr.length; i += 5){
+    arr.splice(i, 1);
+ }
 
+ return arr
+  
+ }
 
-   
-}
-
- sortInnerArrays(1000)
+ console.log(deleteEachFithElem([1,4,5,6,5,7,8,8,9,5,0,0,0,4,5,4]))
 
 
