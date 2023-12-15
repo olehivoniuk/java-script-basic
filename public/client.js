@@ -1,41 +1,17 @@
 
+let sentence = "Any answers dadded sas agreeable as sabove sanswers, fadmirable gas angelic advice, altogether acceptable at fall amicable assemblies, are alright.";
 
-function findTheSumOfElements(obj){
+function getArrayWithA(str){
 
-  let sum = 0; 
+  let arr = str.trim().split(' '); 
+  
 
-  for ( let key in obj){
-    let subObj = obj[key]; 
+  let arr3 =  arr.filter(element => { if (element.split('')[0] == 'a'){
 
-    for ( let key in  subObj){
-      let value = subObj[key]
+     return  element
 
-      sum += value
-
-    }
-  }
-
-  return sum
-
- 
+  }})
+  console.log(arr3);
 }
 
-   let res  = findTheSumOfElements( {
-	1: {
-		1: 11,
-		2: 12,
-		3: 13,
-	},
-	2: {
-		1: 21,
-		2: 22,
-		3: 23,
-	},
-	3: {
-		1: 24,
-		2: 25,
-		3: 26,
-	},
-})
- 
-console.log(res);
+getArrayWithA(sentence)
