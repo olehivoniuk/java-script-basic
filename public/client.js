@@ -1,18 +1,15 @@
-function makeZeros(num){
+function deleteEachSecondWord(str){
 
-  let arr = []
+  let arr = str.split(' '); 
 
-   for ( let i = 0; i <= num - 1; i++){
-   
-     arr.push(i)
-     arr[i] = '0'
+   for ( let i = 1; i < arr.length; i+=1){
+     arr.splice(i, 1)
+
    }
 
-   return arr.join('')
-
- 
+   return arr
  }
 
-console.log(makeZeros(9))
+console.log(deleteEachSecondWord('aaa bbb ccc eee fff ddd jjj'))
 
 
