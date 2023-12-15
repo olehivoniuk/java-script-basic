@@ -1,16 +1,17 @@
-function delete3LettersWords(arr){
+function checkOddNumbers(num){
 
-  let arr1 = []; 
+  let arr1 = num.toString().split(''); 
 
-     arr.forEach(elem => (elem.split('').length <3)? arr1.push(elem): null   )
+    let condition = arr1.every(elem => (elem % 2 != 0)? true : false)
 
-  
-     return arr1;
+  console.log(condition)
+
+     
  }
 
-  let res = delete3LettersWords(['ggg', 'j', 'ghghghg', 'k', 'dhdd', 'ggg'])
+  checkOddNumbers(1357)
 
- console.log(res)
+
 
 
 
