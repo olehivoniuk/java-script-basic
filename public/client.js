@@ -1,17 +1,11 @@
 
-let sentence = "Any answers dadded sas agreeable as sabove sanswers, fadmirable gas angelic advice, altogether acceptable at fall amicable assemblies, are alright.";
 
-function getArrayWithA(str){
+function filterArray(arr){
 
-  let arr = str.trim().split(' '); 
+   let res  = arr.filter(elem => (elem % 5 == 0)? elem : null )
   
-
-  let arr3 =  arr.filter(element => { if (element.split('')[0] == 'a'){
-
-     return  element
-
-  }})
-  console.log(arr3);
+   console.log(res);
+  
 }
 
-getArrayWithA(sentence)
+filterArray([1,5,25,20,50,41,40,35])
