@@ -1,16 +1,16 @@
-let num = 12345;
 
-function checkDigits(num){
 
-  let arr = num.toString().split(''); 
+function changeArray(arr){
 
-   let res = arr.every(elem => (+elem > 0)? true : false)
+ 
 
-  console.log(res);
+  console.log( arr.join('').split(''));
+
+
 
 
 
 }
 
- checkDigits(num)
+ changeArray([123, 456, 789])
 
