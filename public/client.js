@@ -2,7 +2,7 @@ function createArray(){
 
   let arr = []
 
-for(let i = 0; i <= 4; i++){
+for(let i = 0; i <= 2; i++){
    arr[i] = []
   for ( let j = 1; j <= 3; j++){
     arr[i].push(j)
