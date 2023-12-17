@@ -1,19 +1,42 @@
-
+let data = [
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+];
 
  
-function getLastLetterCapitalized(str){
+function getTotal(obj){
 
-  let arr = str.split(' '); 
+  let sum = 0;
 
-  for ( let i = 0; i < arr.length; i++ ){
-    arr[i] = arr[i].slice(0, arr[i].length - 1 )
-     + arr[i].split('')[arr[i].length - 1].toUpperCase()
+  for ( let key in obj){
+    let value = obj[key]
+    for ( let key1 in value){
+      let value1 = value[key1]
+      for (let num of value1){
+        sum += num
+      }
+    }
   }
 
-  return arr.join(' ')
+  return sum;
+
+ 
 
 }
 
+ let res = getTotal(data); 
 
- let res = getLastLetterCapitalized("hello world nice to see you again here")
  console.log(res)
