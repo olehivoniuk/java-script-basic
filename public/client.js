@@ -1,24 +1,19 @@
 
 
  
- 
- function getUpdatedArray(arr){
+ function removeVowels ( doc ) {
+  
+  let result = ''; 
 
-   let arr1 = arr.toString().split(',')
+  for ( const ch of doc ){
+    if(!'aeiouyAEIOUY'.includes(ch))
+    result += ch; 
+  }
 
+  return result;
 
-   for ( let i = 0; i < arr1.length; i++){
-    if (arr1[i].toString().length == 1 ){
-        arr1[i] = `${arr1[i]}, ${arr1[i]}`
-    }
-   }
+}
 
-   return arr1
+ let res = removeVowels("hello world")
 
-
- }
-
-
-  let res = getUpdatedArray([1,23,5,52,65,77])
-
-  console.log(res)
+console.log(res);
