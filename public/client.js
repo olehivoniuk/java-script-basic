@@ -1,9 +1,9 @@
 function changeString(str){
 
- let cutStr = str.slice(7); 
- let upperCase = str.slice(6,7).toUpperCase()
+ let cutStr = str.slice(5); 
+ 
 
- let res = `camel${upperCase}${cutStr}`
+ let res = `snake_${cutStr.toLowerCase()}`
 
  console.log(res);
 
@@ -12,4 +12,4 @@ function changeString(str){
  
 }
 
-changeString('kebab-case')
+changeString('camelCase')
