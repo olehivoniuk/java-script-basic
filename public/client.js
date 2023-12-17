@@ -1,23 +1,23 @@
 
 
-function getRepeated(num1, num2){
+function getArray(num1){
 
   let arr1 = num1.toString().split('')
-  let arr2 = num2.toString().split('')
-   let arr3 = arr1.concat(arr2); 
-     arr3.sort()
-   let arr4 = []
+  console.log(arr1);
+  let arr = []; 
 
-   for ( let i = 0; i < arr3.length; i++){
-    if ( arr3[i] == arr3[i + 1 ]){
-      arr4.push(arr3[i])
+  for ( let i = 0; i< arr1.length; i++){
+    if ( arr1[i] == 3 ){
+      arr.push(i)
     }
-   }
+  }
 
-   return arr4
+  arr.splice(0,1); 
+  arr.splice(arr.length - 1); 
+  return arr;
+  
 
 }
  
-
-let res = getRepeated(4568, 259634); 
-console.log(res)
+  let res =  getArray(2312352923224232); 
+  console.log(res)
