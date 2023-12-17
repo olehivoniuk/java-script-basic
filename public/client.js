@@ -1,15 +1,18 @@
-function changeString(str){
+function createArray(){
 
- let cutStr = str.slice(5); 
- 
+  let arr = []
 
- let res = `snake_${cutStr.toLowerCase()}`
+for(let i = 0; i <= 4; i++){
+   arr[i] = []
+  for ( let j = 1; j <= 3; j++){
+    arr[i].push(j)
 
- console.log(res);
+  }
+}
+return arr;
 
-
-
- 
 }
 
-changeString('camelCase')
+ let res  = createArray(); 
+
+ console.log(res);
