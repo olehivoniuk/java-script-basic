@@ -1,10 +1,10 @@
 function checkNumbers(str){
 
   let arr = str.split('')
-  let res = arr.every(elem => /[0-9]/.test(elem))
+  let res = arr.every(elem => elem %2 ==  0)
   console.log(res);
 
 }
 
- checkNumbers('2342352'); 
+ checkNumbers('2422'); 
 
