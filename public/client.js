@@ -1,22 +1,13 @@
-function findNumbers(num){
 
 
+function getRepeated(arr){
 
-  for ( let i = 0; i <= num; i++){
-      let arr = i.toString().split(''); 
-      let sums = arr.reduce((sum,elem) => sum + Number(elem),0)
-      if (sums == 13){
-        console.log(i);
-      }
-     
+  for (let i = 0; i < arr.length; i++){
+    arr[i] = `${arr[i]},${arr[i]}`
   }
+  console.log(arr);
 
- 
-  
-  
-  
 }
-
-
-findNumbers(1000); 
  
+
+getRepeated(['2', '4', '5'])
