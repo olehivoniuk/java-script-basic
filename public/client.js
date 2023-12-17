@@ -1,12 +1,21 @@
-console.log('a' < 'b');
 
-function getStringSorted(str){
+function getDivisors(num){
 
- let res = str.split('').sort()
- console.log(res)
+  let arr = [];
 
+  for ( let i = 0; i<= num; i++){
+    if ( num % i == 0){
+      arr.push(i)
+    }
+  }
 
-}
+  return arr;
+ 
+ 
+ }
+ 
+ 
+  let res = getDivisors(15); 
 
+  console.log(res);
 
-getStringSorted('sdadgdlvcwe')
