@@ -1,9 +1,15 @@
-function checkIfContains3(arr){
+function changeString(str){
 
-  for ( let ch of arr){
-    console.log(ch.toString().includes('3')); 
-  }
+ let cutStr = str.slice(7); 
+ let upperCase = str.slice(6,7).toUpperCase()
 
+ let res = `camel${upperCase}${cutStr}`
+
+ console.log(res);
+
+
+
+ 
 }
 
-checkIfContains3([453, 345, 423, 321])
+changeString('kebab-case')
