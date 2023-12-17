@@ -1,16 +1,12 @@
+console.log('a' < 'b');
 
+function getStringSorted(str){
 
-function changeArray(arr){
-
- 
-
-  console.log( arr.join('').split(''));
-
-
-
+ let res = str.split('').sort()
+ console.log(res)
 
 
 }
 
- changeArray([123, 456, 789])
 
+getStringSorted('sdadgdlvcwe')
