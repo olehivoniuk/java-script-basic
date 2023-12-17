@@ -1,20 +1,22 @@
-function deleteElements(num){
+function findNumbers(num){
 
-  let arr = num.toString().split(',')
+
+
+  for ( let i = 0; i <= num; i++){
+      let arr = i.toString().split(''); 
+      let sums = arr.reduce((sum,elem) => sum + Number(elem),0)
+      if (sums == 13){
+        console.log(i);
+      }
+     
+  }
 
  
   
-  for ( let i = 0; i< arr.length; i++){
-     let arr1 = arr[i].split(''); 
-     if ( !arr[i].includes('00')){
-       console.log(arr1)
-     }
-   
-  }
-
+  
   
 }
 
 
-deleteElements([32, 24000, 420, 410000]); 
+findNumbers(1000); 
  
