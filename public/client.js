@@ -1,18 +1,10 @@
-function createArray(){
+function checkNumbers(str){
 
-  let arr = []
-
-for(let i = 0; i <= 2; i++){
-   arr[i] = []
-  for ( let j = 1; j <= 3; j++){
-    arr[i].push(j)
-
-  }
-}
-return arr;
+  let arr = str.split('')
+  let res = arr.every(elem => /[0-9]/.test(elem))
+  console.log(res);
 
 }
 
- let res  = createArray(); 
+ checkNumbers('2342352'); 
 
- console.log(res);
