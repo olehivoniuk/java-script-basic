@@ -26,7 +26,7 @@ import fs from 'fs';
 // },1000)
 
 // try {
-// 	let text = fs.readFileSync('readme.txt', 'utf8');
+// 	let text = fs.readFileSync('file.txt', 'utf8');
 // 	console.log(text);
 // } catch (err) {
 // 	console.log('при чтении файла возникла ошибка', err);
@@ -43,30 +43,63 @@ import fs from 'fs';
 
 // console.log("Hello world")
 
-function createFiles() {
-	let fileNames = [];
-	for (let i = 0; i < 10; i++) {
-	  fileNames.push('text' + i + '.txt');
-	}
-	return fileNames;
-  }
+// function createFiles() {
+// 	let fileNames = [];
+// 	for (let i = 0; i < 10; i++) {
+// 	  fileNames.push('text' + i + '.txt');
+// 	}
+// 	return fileNames;
+//   }
   
-  function getContent() {
-	let fileContents = [];
-	for (let i = 0; i < 10; i++) {
-	  fileContents.push(i);
-	}
-	return fileContents.join('\n');
-  }
+//   function getContent() {
+// 	let fileContents = [];
+// 	for (let i = 0; i < 10; i++) {
+// 	  fileContents.push(i);
+// 	}
+// 	return fileContents.join('\n');
+//   }
   
-  let fileNames = createFiles();
+//   let fileNames = createFiles();
   
-  fileNames.forEach((fileName) => {
-	fs.writeFile(fileName, getContent(), function (err) {
-	  if (err) {
-		console.log('Error creating file ' + fileName + ': ' + err.message);
-	  } else {
-		console.log('File ' + fileName + ' created successfully.');
-	  }
-	});
-  });
+//   fileNames.forEach((fileName) => {
+// 	fs.writeFile(fileName, getContent(), function (err) {
+// 	  if (err) {
+// 		console.log('Error creating file ' + fileName + ': ' + err.message);
+// 	  } else {
+// 		console.log('File ' + fileName + ' created successfully.');
+// 	  }
+// 	});
+//   });
+
+fs.readFile('file1.txt', 'utf8', function(err, data1) {
+    if (!err) {
+        fs.readFile('file2.txt', 'utf8', function(err, data2) {
+            if (!err) {
+                fs.readFile('file3.txt', 'utf8', function(err, data3) {
+                    if (!err) {
+                        fs.readFile('file4.txt', 'utf8', function(err, data4) {
+                            if (!err) {
+                                fs.readFile('file5.txt', 'utf8', function(err, data5) {
+                                    if (!err) {
+                                        console.log(data1 * data2 * data3 * data4 * data5);
+                                    } else {
+                                        console.log('ошибка чтения файла file5');
+                                    }
+                                });
+                            } else {
+                                console.log('ошибка чтения файла file4');
+                            }
+                        });
+                    } else {
+                        console.log('ошибка чтения файла file3');
+                    }
+                });
+            } else {
+                console.log('ошибка чтения файла file2');
+            }
+        });
+    } else {
+        console.log('ошибка чтения файла file1');
+    }
+});
+
