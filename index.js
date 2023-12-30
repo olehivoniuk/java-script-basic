@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs, { fdatasync } from 'fs';
 // import { square, cube } from './math.js';
 
 // let res  = square(2) + cube(3);
@@ -71,35 +71,40 @@ import fs from 'fs';
 // 	});
 //   });
 
-fs.readFile('file1.txt', 'utf8', function(err, data1) {
-    if (!err) {
-        fs.readFile('file2.txt', 'utf8', function(err, data2) {
-            if (!err) {
-                fs.readFile('file3.txt', 'utf8', function(err, data3) {
-                    if (!err) {
-                        fs.readFile('file4.txt', 'utf8', function(err, data4) {
-                            if (!err) {
-                                fs.readFile('file5.txt', 'utf8', function(err, data5) {
-                                    if (!err) {
-                                        console.log(data1 * data2 * data3 * data4 * data5);
-                                    } else {
-                                        console.log('ошибка чтения файла file5');
-                                    }
-                                });
-                            } else {
-                                console.log('ошибка чтения файла file4');
-                            }
-                        });
-                    } else {
-                        console.log('ошибка чтения файла file3');
-                    }
-                });
-            } else {
-                console.log('ошибка чтения файла file2');
-            }
-        });
-    } else {
-        console.log('ошибка чтения файла file1');
-    }
-});
+// fs.readFile('file1.txt', 'utf8', function(err, data1) {
+//     if (!err) {
+//         fs.readFile('file2.txt', 'utf8', function(err, data2) {
+//             if (!err) {
+//                 fs.readFile('file3.txt', 'utf8', function(err, data3) {
+//                     if (!err) {
+//                         fs.readFile('file4.txt', 'utf8', function(err, data4) {
+//                             if (!err) {
+//                                 fs.readFile('file5.txt', 'utf8', function(err, data5) {
+//                                     if (!err) {
+//                                         console.log(data1 * data2 * data3 * data4 * data5);
+//                                     } else {
+//                                         console.log('ошибка чтения файла file5');
+//                                     }
+//                                 });
+//                             } else {
+//                                 console.log('ошибка чтения файла file4');
+//                             }
+//                         });
+//                     } else {
+//                         console.log('ошибка чтения файла file3');
+//                     }
+//                 });
+//             } else {
+//                 console.log('ошибка чтения файла file2');
+//             }
+//         });
+//     } else {
+//         console.log('ошибка чтения файла file1');
+//     }
+// });
 
+fs.promises.readFile('file1.txt', 'utf8').then(data => {
+	 let res = data.toString().split(''); 
+	 let total = res.reduce((sum,elem)=> sum + Number(elem),0)
+	 console.log(total);
+});
