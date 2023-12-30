@@ -1,31 +1,23 @@
-import fs, { fdatasync } from 'fs';
+import fs from 'fs';
 
-fs.promises.readFile('file1.txt', 'utf8')
-  .then(data => {
-    let res = data.trim().split(',').map(Number); // Convert each character to a number
-    console.log(res);
+async function func() {
+    try {
+        let names = ['1.txt', '2.txt'];
+        let data = [];
 
-    function createFiles() {
-      let fileNames = [];
-      for (let i = 0; i < res.length; i++) {
-        fileNames.push(`text${i}.txt`);
-      }
-      return fileNames;
+        for (let name of names) {
+            data.push(await fs.promises.readFile(name, 'utf8'));
+        }
+        console.log(data);
+
+        // Convert each element to a number and then sum
+        let sum = data.map(Number).reduce((acc, num) => acc + num, 0);
+
+        // Write the sum to 'res.txt'
+        await fs.promises.writeFile('res.txt', sum.toString());
+    } catch (err) {
+        console.log('что-то пошло не так');
     }
+}
 
-    let fileNames = createFiles();
-
-    function getContent(index) {
-      return res[index].toString(); // Convert the number to a string
-    }
-
-    return Promise.all(fileNames.map((fileName, index) => {
-      return fs.promises.writeFile(fileName, getContent(index));
-    }));
-  })
-  .then(() => {
-    console.log('Files created successfully.');
-  })
-  .catch(err => {
-    console.error('Error:', err);
-  });
+func();
