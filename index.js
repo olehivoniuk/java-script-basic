@@ -19,8 +19,54 @@ import fs from 'fs';
 // 	fs.writeFileSync(key,value)
 // }
 
-setInterval(function(){
-	const currentContent = fs.readFileSync('file1.txt','utf-8'); 
-	const updatedContent = currentContent + "!"; 
-	fs.writeFileSync('file1.txt', updatedContent)
-},1000)
+// setInterval(function(){
+// 	const currentContent = fs.readFileSync('file1.txt','utf-8'); 
+// 	const updatedContent = currentContent + "!"; 
+// 	fs.writeFileSync('file1.txt', updatedContent)
+// },1000)
+
+// try {
+// 	let text = fs.readFileSync('readme.txt', 'utf8');
+// 	console.log(text);
+// } catch (err) {
+// 	console.log('при чтении файла возникла ошибка', err);
+// } 
+
+// fs.readFile('file.txt', 'utf-8', function(err, data){
+
+// 	if(!err){
+// 		console.log(data**2)
+// 	}else{
+// 		console.log("File does not exist", err)
+// 	}
+// })
+
+// console.log("Hello world")
+
+function createFiles() {
+	let fileNames = [];
+	for (let i = 0; i < 10; i++) {
+	  fileNames.push('text' + i + '.txt');
+	}
+	return fileNames;
+  }
+  
+  function getContent() {
+	let fileContents = [];
+	for (let i = 0; i < 10; i++) {
+	  fileContents.push(i);
+	}
+	return fileContents.join('\n');
+  }
+  
+  let fileNames = createFiles();
+  
+  fileNames.forEach((fileName) => {
+	fs.writeFile(fileName, getContent(), function (err) {
+	  if (err) {
+		console.log('Error creating file ' + fileName + ': ' + err.message);
+	  } else {
+		console.log('File ' + fileName + ' created successfully.');
+	  }
+	});
+  });
