@@ -1,133 +1,26 @@
-import http from 'http';
-import fs from 'fs/promises';
+import fs from 'fs';
+// import { square, cube } from './math.js';
 
-import qs from 'querystring';
-import formidable from 'formidable';
-import routes from './server.js'
+// let res  = square(2) + cube(3);
+// console.log(res);
 
-import config from './config.js';
+// let text1 = fs.readFileSync('file1.txt','utf8'); 
+// let text2 = fs.readFileSync('file2.txt','utf8'); 
 
-console.log('Test HTTP server started, open http://localhost:' + config.port + '/');
+// console.log(+text1 + +text2)
 
-http.createServer(async (request, response) => {
-	let root = 'public';
-	
-	let [url, querystring = ''] = request.url.split('?');
-	url = normalize(url);
-	
-	let text = '';
-	let code = 200;
-	
-	if (routes[url]) {
-		let handler = routes[url];
-		
-		let body;
-		let post;
-		
-		// todo: не работает совместно
-		if (request.headers['content-type'] === 'application/json') {
-			body = await getBody(request);
-			post = body;
-		} else {
-			post = await getPost(request);
-			body = {};
-		}
-		
-		let get  = qs.parse(querystring);
-		
-		text = String(handler({get, post, body}, response));
-		
-		if (!response.getHeader('Content-Type')) {
-			response.setHeader('Content-Type', 'text/html');
-		}
-	} else {
-		let path = getPath(root, url);
-		response.setHeader('Content-Type', getMimeType(path));
-		
-		try {
-			text = await fs.readFile(path, 'utf-8');
-		} catch (error) {
-			code = 404;
-			text = `Page '${path}' not found`;
-		}
-	}
-	
-	response.statusCode = code;
-	response.write(text ? text : '');
-	response.end();
-	
-}).listen(config.port);
+// let obj = {
+// 	'file1.txt': 'text1',
+// 	'file2.txt': 'text2',
+// 	'file3.txt': 'text3',
+// }
 
-function getPost(request) {
-	return new Promise((resolve, reject) => {
-		if (request.method == 'POST') {
-			let form = new formidable.IncomingForm();
+// for ( let [key, value] of Object.entries(obj)){
+// 	fs.writeFileSync(key,value)
+// }
 
-			form.parse(request, function(err, fields, files) {
-				if (err) {
-					reject(err.message);
-					return;
-				}
-				
-				resolve(fields);
-			});
-		} else {
-			resolve({});
-		}
-	});
-}
-
-function getBody(request) {
-	return new Promise((resolve, reject) => {
-		let body = [];
-		
-		request.on('data', chunk => {
-			body.push(chunk);
-		}).on('end', () => {
-			body = Buffer.concat(body).toString();
-			resolve(body);
-		});
-	});
-}
-
-function normalize(url) {
-	url =  '/' + url.replace(/^\/|\/$/g, '');
-	
-	if (url !== '/' && !/\.[^/]+?/.test(url)) {
-		url = url + '/';
-	}
-	
-	return url;
-}
-function getPath(root, url) {
-	if (url.match(/\/$/)) {
-		url = url + 'index.html';
-	}
-	
-	return root + url;
-}
-function getMimeType(path) {
-	let mimes = {
-		html: 'text/html',
-		jpeg: 'image/jpeg',
-		jpg:  'image/jpeg',
-		png:  'image/png',
-		svg:  'image/svg+xml',
-		json: 'application/json',
-		js:   'text/javascript',
-		css:  'text/css',
-		ico:  'image/x-icon',
-	};
-	
-	let exts = Object.keys(mimes);
-	let extReg = new RegExp('\\.(' + exts.join('|') + ')$');
-	
-	let ext = path.match(extReg)[1];
-	
-	if (ext) {
-		return mimes[ext];
-	} else {
-		return 'text/plain';
-	}
-}
-
+setInterval(function(){
+	const currentContent = fs.readFileSync('file1.txt','utf-8'); 
+	const updatedContent = currentContent + "!"; 
+	fs.writeFileSync('file1.txt', updatedContent)
+},1000)
