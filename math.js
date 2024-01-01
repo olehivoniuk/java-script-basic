@@ -1,7 +1,10 @@
-export function square(num) {
-	return num * num;
-}
+import fs from 'fs/promises'; 
 
-export function cube(num) {
-	return num * num * num;
-}
+// async function func() {
+// 	let data = await fs.readFile('result.txt', 'utf8');
+// 	console.log(data);
+// }
+
+// func();
+
+console.log(__dirname)
