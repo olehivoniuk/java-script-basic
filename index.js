@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { constants } from 'fs';
+import { access, constants } from 'fs';
 
 // async function func() {
 //     try {
@@ -29,17 +29,25 @@ import { constants } from 'fs';
 
 
 
-function checkExistence() {
-    fs.access('Hello4.txt', constants.F_OK)
-        .then(() => {
-            return fs.readFile('result.txt', 'utf-8');
-        })
-        .then((data) => {
-            console.log('File exists. Content:', data);
-        })
-        .catch(() => {
-            console.log('File does not exist');
-        });
+ async function  checkExistence() {
+    // fs.access('result.txt', constants.F_OK)
+    //     .then(() => {
+    //         return fs.readFile('result.txt', 'utf-8');
+    //     })
+    //     .then((data) => {
+    //         console.log('File exists. Content:', data);
+    //     })
+    //     .catch(() => {
+    //         console.log('File does not exist');
+    //     });
+	try{
+		await fs.access("result.txt", constants.F_OK)
+        console.log("file exists")
+		let data = await fs.readFile ( "result.txt", 'utf-8')
+		console.log(data)
+	} catch(error){
+		console.log("the file does not exist", error)
+	}
 }
 
 checkExistence();
