@@ -1,16 +1,17 @@
 import React from "react";
 
-function User({ name, surname, age, id, status, checkStatus }) {
+function User({ name, surname, age, id,isEdit, toggleMode, editUser }) {
   return (
     <div>
-      <span> name: {name}</span>
-      <span> surname: {surname}</span>
-      <span> age: {age}</span>
-      <span> status : {status}</span>
+      name: {isEdit ? <input value={name}  onChange ={event =>editUser(id,"name", event)}/> : <span>{name}</span>}
 
-      <span> key: {id}</span>
-      <span>{status ? 'the user is unblocked' : "user is blocked"}</span>
-      <button onClick={() => checkStatus(id)}>Block the user</button>
+      surname: {isEdit ? <input value={surname} onChange ={event => editUser(id,"surname", event)}/> : <span>{surname}</span>}
+
+      age: {isEdit ? <input value={age} onChange ={event => editUser(id,"age", event)} /> : <span>{age}</span>}  
+
+      <button onClick={()=>toggleMode(id)}>{isEdit ? 'save': 'edit'}</button>
+
+
     </div>
   );
 }
