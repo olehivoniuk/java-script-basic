@@ -1,27 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Users from './Users';
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [value, setValue] = useState('');
 
-  const result = notes.map((note, index) => {
-    return <li key={index}>{note}</li>;
-  });
+	const users = [
+		{ name: 'user1', surn: 'surn1', age: 30},
+		{ name: 'user2', surn: 'surn2', age: 31},
+		{ name: 'user3', surn: 'surn3', age: 32},
+	];
 
-  function handleClick() {
-    setNotes([...notes, value]); // Add the value to the notes array
-    setValue(''); // Clear the input after adding the value
-  }
+	let result = users.map((user, index) => (
+		<div key={index}>
+		  <table>
+			<thead>
+			  <tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Age</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr key={index}>
+				<td>{user.name}</td>
+				<td>{user.surn}</td>
+				<td>{user.age}</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+	  ));
+	  
 
-  return (
-    <div>
-      <button onClick={handleClick}>Add an element</button>
-      <input value={value} onChange={(event) => setValue(event.target.value)} />
-      <ul>
-        {result}
-      </ul>
-    </div>
-  );
+	return <div>
+
+        <Users />
+		<p>{result}</p>
+	</div>;
 }
 
 export default App;
