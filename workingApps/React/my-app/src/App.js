@@ -1,20 +1,25 @@
+
 import React from 'react';
-import { MyContext } from './MyContext';
-import { useState } from 'react';
-import Parent from './Parent.js';
 import './styles.css';
+import {useRef} from 'react'
 
 
 
 function App() {
-	const[age,setAge] = useState(50)
+
+	const ref = useRef(null)
+
+	function handleClick() {
+		ref.current.focus();
+		ref.current.value = ''
+	}
+	
 	return (
-		<MyContext.Provider value={age}>
-			<Parent />
-			<button onClick={()=>setAge(age/2)}>Divide age by 2</button>
-		</MyContext.Provider>
+		<div>
+			<input ref={ref} />
+			<button onClick={handleClick}>focus</button>
+		</div>
 	);
 }
 
 export default App;
-
