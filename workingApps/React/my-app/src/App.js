@@ -2,33 +2,29 @@
 import React from 'react';
 import './styles.css';
 import {useState} from 'react'
-import { useMemo } from 'react'
+import Text from './Text';
+
 
 
 
 
 
 function App() {
-	const[text, setText] = useState('react')
-	const[num, setNum] = useState(0)
+	const [name, setName] = useState('');
 
-	function handleTextChange(){
-		setText(text +' !')
-	}
 
-	function triple(num){
-		let number = Number(num)
+	return (
+		<div>
+			<label>
+				name:
+				<input value={name} onChange={(e) => setName(e.target.value)} />
+			</label>
+			<br />
+			
+			<Text />
+		</div>
+	);
 
-		return number *3
-	}
-
-	let result = useMemo(()=>triple(num),[num])
-	
-	return (<div>
-		<p onClick={handleTextChange}>{text}</p>
-		<p onClick={()=> setNum(num + 1)}>{result}</p>
-	</div>
-	)
 }
 
 export default App;
