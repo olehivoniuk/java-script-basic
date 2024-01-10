@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { MyContext } from './MyContext';
+import { useState } from 'react';
+import Parent from './Parent.js';
+import './styles.css';
+
+
 
 function App() {
-  const [name, setName] = useState('Oscar');
-
-  useEffect(() => {
-    localStorage.setItem('name', name);
-  }, [name]);
-
-  function changeName() {
-    setName('Ivan');
-  }
-
-  return (
-    <div>
-      <h1>React App</h1>
-      <button onClick={changeName}>change</button>
-    </div>
-  );
+	const[age,setAge] = useState(50)
+	return (
+		<MyContext.Provider value={age}>
+			<Parent />
+			<button onClick={()=>setAge(age/2)}>Divide age by 2</button>
+		</MyContext.Provider>
+	);
 }
 
 export default App;
+
