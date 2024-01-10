@@ -2,28 +2,25 @@
 import React from 'react';
 import './styles.css';
 import {useState} from 'react'
-import Text from './Text';
-
-
-
-
+import { useCallback } from 'react';
+import Products from './Products';
 
 
 function App() {
-	const [name, setName] = useState('');
+	const[text, setText] = useState('text'); 
+	const[products, setProducts ] = useState([])
+
+	const addProduct = useCallback(() =>{
+       setProducts(()=> [...products, "orange"])
+	}, [products] ) 
 
 
-	return (
-		<div>
-			<label>
-				name:
-				<input value={name} onChange={(e) => setName(e.target.value)} />
-			</label>
-			<br />
-			
-			<Text />
-		</div>
-	);
+	return <>
+
+	<p onClick={()=> setText(text + "!")}>{text}</p>
+	<Products  products={products} addProduct={addProduct}/>
+	
+	</>
 
 }
 
