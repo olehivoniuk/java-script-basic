@@ -1,25 +1,34 @@
 
 import React from 'react';
 import './styles.css';
-import {useRef} from 'react'
+import {useState} from 'react'
+import { useMemo } from 'react'
+
+
 
 
 
 function App() {
+	const[text, setText] = useState('react')
+	const[num, setNum] = useState(0)
 
-	const ref = useRef(null)
-
-	function handleClick() {
-		ref.current.focus();
-		ref.current.value = ''
+	function handleTextChange(){
+		setText(text +' !')
 	}
+
+	function triple(num){
+		let number = Number(num)
+
+		return number *3
+	}
+
+	let result = useMemo(()=>triple(num),[num])
 	
-	return (
-		<div>
-			<input ref={ref} />
-			<button onClick={handleClick}>focus</button>
-		</div>
-	);
+	return (<div>
+		<p onClick={handleTextChange}>{text}</p>
+		<p onClick={()=> setNum(num + 1)}>{result}</p>
+	</div>
+	)
 }
 
 export default App;
